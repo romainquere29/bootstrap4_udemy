@@ -13,7 +13,7 @@
 
 <body>
   <header>
-    <h1 class="display-3 text-center my-4">Tooltips</h1>
+    <h1 class="display-3 text-center my-4">Collapse & Accordion</h1>
     <div class="container">
       <div class="row">
         <div class="col-md-3">
@@ -85,35 +85,76 @@
   </header>
 
   <div class="container">
-    <!--###################START HERE######################-->
+    <!--#####################START HERE###################-->
 
-    <!-- TOOLTIPS -->
-    <button class="btn btn-primary" data-toggle="tooltip" data-placement="top" title="Tooltip on top">Tooltip On Top</button>
-    <button class="btn btn-success" data-toggle="tooltip" data-placement="right" title="Tooltip on right">Tooltip On Right</button>
-    <button class="btn btn-warning" data-toggle="tooltip" data-placement="bottom" title="Tooltip on bottom">Tooltip On Bottom</button>
-    <button class="btn btn-danger" data-toggle="tooltip" data-placement="left" title="Tooltip on left">Tooltip On Left</button>
+    <!-- BUTTON WITH COLLAPSE -->
+    <button class="btn btn-primary d-block mb-4" data-toggle="collapse" data-target="#collapse-btn-1">Read More</button>
 
-    <br>
-    <br>
+    <div class="collapse mb-5" id="collapse-btn-1">
+      <div class="card">
+        <div class="card-body">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit eius libero quisquam nobis explicabo vel non necessitatibus
+          ipsum doloribus cupiditate voluptate recusandae quo autem error debitis, sed, minima repellendus commodi.
+        </div>
+      </div>
+    </div>
 
-    <!-- TOOLTIPS WITH HTML -->
-    <button id="hello" class="btn btn-primary"  data-toggle="tooltip" data-placement="left" data-html="true" title="<h3>Hello</h3><p>World</p>">Tooltip On With HTML</button>
+    <!-- ACCORDION -->
+    <div id="accordion">
+      <div class="card">
+        <div class="card-header">
+          <h5>
+            <a href="#collapse1" data-parent="#accordion" data-toggle="collapse">
+              Collapse One
+            </a>
+          </h5>
+        </div>
 
-    <hr>
+        <div id="collapse1" class="collapse show">
+          <div class="card-body">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis ea iste a doloremque, cumque, debitis eum vel ipsum architecto
+            aut, recusandae totam ullam aperiam. Nesciunt expedita officiis animi quam corporis optio inventore facilis sint
+            et nulla in, repellat debitis dolor at nisi quo, unde temporibus. Quos nisi nostrum officia, illo.
+          </div>
+        </div>
+      </div>
 
-    <!-- TRIGGER WITH JS -->
-    <button class="btn btn-secondary" onclick="showTooltip()">
-      Show Tooltip
-    </button>
+      <div class="card">
+        <div class="card-header">
+          <h5>
+            <a href="#collapse2" data-parent="#accordion" data-toggle="collapse">
+              Collapse Two
+            </a>
+          </h5>
+        </div>
 
-    <button class="btn btn-secondary" onclick="hideTooltip()">
-      Hide Tooltip
-    </button>
+        <div id="collapse2" class="collapse">
+          <div class="card-body">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis ea iste a doloremque, cumque, debitis eum vel ipsum architecto
+            aut, recusandae totam ullam aperiam. Nesciunt expedita officiis animi quam corporis optio inventore facilis sint
+            et nulla in, repellat debitis dolor at nisi quo, unde temporibus. Quos nisi nostrum officia, illo.
+          </div>
+        </div>
+      </div>
 
-    <button class="btn btn-secondary" onclick="toggleTooltip()"">
-      Toggle Tooltip
-    </button>
+      <div class="card">
+        <div class="card-header">
+          <h5>
+            <a href="#collapse3" data-parent="#accordion" data-toggle="collapse">
+              Collapse Three
+            </a>
+          </h5>
+        </div>
 
+        <div id="collapse3" class="collapse">
+          <div class="card-body">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis ea iste a doloremque, cumque, debitis eum vel ipsum architecto
+            aut, recusandae totam ullam aperiam. Nesciunt expedita officiis animi quam corporis optio inventore facilis sint
+            et nulla in, repellat debitis dolor at nisi quo, unde temporibus. Quos nisi nostrum officia, illo.
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 
   <div style="margin-top:500px;"></div>
@@ -124,44 +165,6 @@
     crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
     crossorigin="anonymous"></script>
-
-  <script>
-    // Init tooltips
-    $('[data-toggle="tooltip"]').tooltip();
-
-    function showTooltip() {
-      $('#hello').tooltip('show');
-    }
-
-    function hideTooltip() {
-      $('#hello').tooltip('hide');
-    }
-
-    function toggleTooltip() {
-      $('#hello').tooltip('toggle');
-    }
-
-    // Tooltips events
-    $('#hello').on('show.bs.tooltip', function() {
-      console.log('Tooltop Showwwww')
-    })  
-
-    $('#hello').on('shown.bs.tooltip', function() {
-      console.log('Tooltop Shown')
-    }) 
-
-
-    $('#hello').on('hide.bs.tooltip', function() {
-      console.log('Tooltop Hide')
-    }) 
-
-
-    $('#hello').on('hidden.bs.tooltip', function() {
-      console.log('Tooltop Hidden')
-    }) 
-
-  </script>
-
 </body>
 
 </html>

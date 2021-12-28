@@ -13,7 +13,7 @@
 
 <body>
   <header>
-    <h1 class="display-3 text-center my-4">Tooltips</h1>
+    <h1 class="display-3 text-center my-4">Jumbotron</h1>
     <div class="container">
       <div class="row">
         <div class="col-md-3">
@@ -85,37 +85,32 @@
   </header>
 
   <div class="container">
-    <!--###################START HERE######################-->
+    <!--#####################START HERE######################-->
 
-    <!-- TOOLTIPS -->
-    <button class="btn btn-primary" data-toggle="tooltip" data-placement="top" title="Tooltip on top">Tooltip On Top</button>
-    <button class="btn btn-success" data-toggle="tooltip" data-placement="right" title="Tooltip on right">Tooltip On Right</button>
-    <button class="btn btn-warning" data-toggle="tooltip" data-placement="bottom" title="Tooltip on bottom">Tooltip On Bottom</button>
-    <button class="btn btn-danger" data-toggle="tooltip" data-placement="left" title="Tooltip on left">Tooltip On Left</button>
+    <!-- JUMBOTRON -->
+    <div class="jumbotron text-center">
+      <h1 class="display-4">Welcome To My Website!</h1>
+      <p class="lead">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nostrum necessitatibus perspiciatis cum vitae, modi hic?</p>
+      <hr>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea, quibusdam.</p>
+      <a class="btn btn-primary btn-lg" href="#" role="button">Read More</a>
+    </div>
 
     <br>
-    <br>
 
-    <!-- TOOLTIPS WITH HTML -->
-    <button id="hello" class="btn btn-primary"  data-toggle="tooltip" data-placement="left" data-html="true" title="<h3>Hello</h3><p>World</p>">Tooltip On With HTML</button>
-
-    <hr>
-
-    <!-- TRIGGER WITH JS -->
-    <button class="btn btn-secondary" onclick="showTooltip()">
-      Show Tooltip
-    </button>
-
-    <button class="btn btn-secondary" onclick="hideTooltip()">
-      Hide Tooltip
-    </button>
-
-    <button class="btn btn-secondary" onclick="toggleTooltip()"">
-      Toggle Tooltip
-    </button>
 
   </div>
+  <!-- ./container -->
 
+  <!-- FLUID JUMBOTRON -->
+  <div class="jumbotron jumbotron-fluid">
+    <div class="container">
+      <h1 class="display-4">Fluid Jumbotron</h1>
+      <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas recusandae voluptatibus, natus architecto asperiores
+        a.
+      </p>
+    </div>
+  </div>
   <div style="margin-top:500px;"></div>
 
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
@@ -124,44 +119,6 @@
     crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
     crossorigin="anonymous"></script>
-
-  <script>
-    // Init tooltips
-    $('[data-toggle="tooltip"]').tooltip();
-
-    function showTooltip() {
-      $('#hello').tooltip('show');
-    }
-
-    function hideTooltip() {
-      $('#hello').tooltip('hide');
-    }
-
-    function toggleTooltip() {
-      $('#hello').tooltip('toggle');
-    }
-
-    // Tooltips events
-    $('#hello').on('show.bs.tooltip', function() {
-      console.log('Tooltop Showwwww')
-    })  
-
-    $('#hello').on('shown.bs.tooltip', function() {
-      console.log('Tooltop Shown')
-    }) 
-
-
-    $('#hello').on('hide.bs.tooltip', function() {
-      console.log('Tooltop Hide')
-    }) 
-
-
-    $('#hello').on('hidden.bs.tooltip', function() {
-      console.log('Tooltop Hidden')
-    }) 
-
-  </script>
-
 </body>
 
 </html>

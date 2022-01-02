@@ -1,0 +1,2 @@
+npm install -g sass
+  /usr/local/bin/sass scss/bootstrap.scss css/bootstrap.css

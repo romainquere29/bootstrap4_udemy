@@ -11,12 +11,200 @@
 </head>
 <body>
 <!-- START HERE -->
+<nav class="navbar navbar-expand-sm navbar-dark bg-dark p-0">
+    <div class="container">
+        <a href="index.html" class="navbar-brand">Blogen</a>
+        <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav">
+                <li class="nav-item px-2">
+                    <a href="index.html" class="nav-link active">Dashboard</a>
+                </li>
+                <li class="nav-item px-2">
+                    <a href="post.html" class="nav-link">Posts</a>
+                </li>
+                <li class="nav-item px-2">
+                    <a href="categories.html" class="nav-link">Categories</a>
+                </li>
+                <li class="nav-item px-2">
+                    <a href="users.html" class="nav-link">Users</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item dropdown me-3">
+                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
+                    <i class="fas fa-user"></i> Welcome Romain
+                    </a>
+                    <div class="dropdown-menu">
+                        <a href="profile.html" class="dropdown-item">
+                            <i class="fas fa-user-circle"></i> Profile
+                        </a>
+                        <a href="settings.html" class="dropdown-item">
+                            <i class="fas fa-cog"></i> Settings
+                        </a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a href="login.html" class="nav-link">
+                        <i class="fas fa-user-times"></i> Logout
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- HEADER -->
+<header id="main-header" class="py-2 bg-primary text-white">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <h2><i class="fas fa-cog"></i> Dashboard</h2>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- ACTIONS -->
+<section id="actions" class="py-4 mb-4 bg-light">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="d-grid">
+                    <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addPostModal">
+                        <i class="fas fa-plus"> Add Post </i>
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="d-grid">
+                    <a href="#" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#addCategoryModal">
+                        <i class="fas fa-plus"> Add Category </i>
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="d-grid">
+                    <a href="#" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#addUserModal">
+                        <i class="fas fa-plus"> Add User </i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- MODALS -->
+    <!-- ADD POST MODAL -->
+<div class="modal fade" id="addPostModal">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header bg-primary text-white">
+                <h5 class="modal-title">Add Post</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group py-1">
+                        <label for="title">Title</label>
+                        <input type="text" class="form-control">
+                    </div>
+                    <div class="form-group py-1">
+                        <label for="Category">Category</label>
+                        <select class="form-control">
+                            <option value="">Web Devlopment</option>
+                            <option value="">Tech Gadgets</option>
+                            <option value="">Business</option>                            
+                            <option value="">Health & Wellness</option>
+                        </select>
+                    </div>
+                    <div class="form-group py-1">
+                        <label for="image" class="form-label">Upload Image</label>   
+                        <input class="form-control" type="file" id="image">
+                        <small class="form-text text-muted">Max Size 3 Mb</small>
+                    </div>
+                    <div class="form-group py-1">
+                        <label for="body">Body</label>
+                        <textarea name="editor1" class="form-control"></textarea>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary" data-bs-dismiss="modal">Save Changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <!-- ADD CATEGORY MODAL -->
+<div class="modal fade" id="addCategoryModal">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header bg-success text-white">
+                <h5 class="modal-title">Add Category</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group py-1">
+                        <label for="category">Category</label>
+                        <input type="text" class="form-control">
+                    </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-success" data-bs-dismiss="modal">Save Changes</button>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <!-- ADD USER MODAL -->
+<div class="modal fade" id="addUserModal">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header bg-warning text-white">
+                <h5 class="modal-title">Add User</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group py-1">
+                        <label for="name">Name</label>
+                        <input type="text" class="form-control">
+                    </div>
+                    <div class="form-group py-1">
+                        <label for="email">Email</label>
+                        <input type="email" class="form-control">
+                    </div>
+                    <div class="form-group py-1">
+                        <label for="password">Password</label>
+                        <input type="password" class="form-control">
+                    </div>
+                    <div class="form-group py-1">
+                        <label for="password2">Confirm Password</label>
+                        <input type="password" class="form-control">
+                    </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-warning" data-bs-dismiss="modal">Save Changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>    
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+    <script src="https://cdn.ckeditor.com/4.17.1/standard/ckeditor.js"></script>
     <script>
         // Get the current year for the copyright
         $('#year').text(new Date().getFullYear());
+
+        CKEDITOR.replace( 'editor1' );
+
     </script>
 </body>
 </html>

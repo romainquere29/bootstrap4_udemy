@@ -20,7 +20,7 @@
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav">
                 <li class="nav-item px-2">
-                    <a href="index.html" class="nav-link active">Dashboard</a>
+                    <a href="index.html" class="nav-link">Dashboard</a>
                 </li>
                 <li class="nav-item px-2">
                     <a href="posts.html" class="nav-link">Posts</a>
@@ -61,7 +61,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-6">
-                <h2><i class="fas fa-cog"></i> Dashboard</h2>
+                <h2><i class="fas fa-user"></i> Edit Profile</h2>
             </div>
         </div>
     </div>
@@ -73,22 +73,22 @@
         <div class="row">
             <div class="col-md-3">
                 <div class="d-grid">
-                    <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addPostModal">
-                        <i class="fas fa-plus"> Add Post </i>
+                    <a href="index.html" class="btn btn-light">
+                        <i class="fas fa-arrow-left">Back to Dashboard </i>
                     </a>
                 </div>
             </div>
             <div class="col-md-3">
                 <div class="d-grid">
-                    <a href="#" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#addCategoryModal">
-                        <i class="fas fa-plus"> Add Category </i>
+                    <a href="#" class="btn btn-success">
+                        <i class="fas fa-lock"> Change Password</i>
                     </a>
                 </div>
             </div>
             <div class="col-md-3">
                 <div class="d-grid">
-                    <a href="#" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#addUserModal">
-                        <i class="fas fa-plus"> Add User </i>
+                    <a href="#" class="btn btn-danger">
+                        <i class="fas fa-trash"> Delete Account </i>
                     </a>
                 </div>
             </div>
@@ -96,125 +96,44 @@
     </div>
 </section>
 
-<!-- POSTS -->
-<section id="posts">
+<!-- PROFILE -->
+<section id="profile">
     <div class="container">
         <div class="row">
             <div class="col-md-9">
                 <div class="card">
                     <div class="card-header">
-                        <h4>Latest Posts</h4>
+                        <h4>Edit Profile</h4>
                     </div>
-                    <table class="table table-striped">
-                        <thead class="thead-dark">
-                            <tr>
-                                <th>#</th>
-                                <th>Title</th>
-                                <th>Category</th>
-                                <th>Date</th>
-                                <th></th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                                                        <tr>
-                                <td>1</td>
-                                <td>Post One</td>
-                                <td>Web Devlopment</td>
-                                <td>May 10 2021</td>
-                                <td>
-                                    <a href="details.html" class="btn btn-secondary">
-                                        <i class="fas fa-angle-double-right"></i> Details
-                                    </a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>2</td>
-                                <td>Post Two</td>
-                                <td>Tech Gadgets</td>
-                                <td>May 11 2021</td>
-                                <td>
-                                    <a href="details.html" class="btn btn-secondary">
-                                        <i class="fas fa-angle-double-right"></i> Details
-                                    </a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>3</td>
-                                <td>Post Three</td>
-                                <td>Web Devlopment</td>
-                                <td>May 13 2021</td>
-                                <td>
-                                    <a href="details.html" class="btn btn-secondary">
-                                        <i class="fas fa-angle-double-right"></i> Details
-                                    </a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>4</td>
-                                <td>Post Four</td>
-                                <td>Business</td>
-                                <td>May 15 2021</td>
-                                <td>
-                                    <a href="details.html" class="btn btn-secondary">
-                                        <i class="fas fa-angle-double-right"></i> Details
-                                    </a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>5</td>
-                                <td>Post Five</td>
-                                <td>Web Devlopment</td>
-                                <td>May 17 2021</td>
-                                <td>
-                                    <a href="details.html" class="btn btn-secondary">
-                                        <i class="fas fa-angle-double-right"></i> Details
-                                    </a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>6</td>
-                                <td>Post Six</td>
-                                <td>Health & Wellness</td>
-                                <td>May 20 2021</td>
-                                <td>
-                                    <a href="details.html" class="btn btn-secondary">
-                                        <i class="fas fa-angle-double-right"></i> Details
-                                    </a>
-                                </td>
-                            </tr>
+                    <div class="card-body">
+                        <form action="">
+                            <div class="form-group">
+                                <label for="name">Name</label>
+                                <input type="text" class="form-control" value="Romain QUERE">
+                            </div>
+                            <div class="form-group">
+                                <label for="name">Email</label>
+                                <input type="email" class="form-control" value="romain.quere@takequere.com">
+                            </div>
+                            <div class="form-group">
+                                <label for="name">Bio</label>
+                                <textarea name="editor1" id="" cols="30" rows="10" class="form-control">
+                                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dignissimos voluptatem veritatis explicabo rem maiores maxime suscipit recusandae perferendis, aliquid repellat quam. Rerum, odit magnam. Laudantium nam, praesentium reiciendis cupiditate suscipit autem fuga hic alias officia. Ad fuga quasi molestias odio!
+                                </textarea>
+                            </div>
+                        </form>
 
-
-                        </tbody>
-                    </table>
+                    </div>
                 </div>
             </div>
             <div class="col-md-3">
-                <div class="card text-center bg-primary text-white mb-3">
-                    <div class="card-body">
-                        <h3>Posts</h3>
-                        <h4 class="display-4">
-                            <i class="fas fa-pencil-alt"></i> 6
-                        </h4>
-                        <a href="posts.html" class="btn btn-outline-light btn-sm">View</a>
-                    </div>
+                <h3>Your Avatar</h3>
+                <img src="img/avatar.png" alt="" class="d-block img-fluid mb-3">
+                <div class="d-grid mb-2">
+                    <button class="btn btn-primary">Edit Image</button>
                 </div>
-                <div class="card text-center bg-success text-white mb-3">
-                    <div class="card-body">
-                        <h3>Category</h3>
-                        <h4 class="display-4">
-                            <i class="fas fa-folder"></i> 4
-                        </h4>
-                        <a href="categories.html" class="btn btn-outline-light btn-sm">View</a>
-                    </div>
-                </div>
-                <div class="card text-center bg-warning text-white mb-3">
-                    <div class="card-body">
-                        <h3>Users</h3>
-                        <h4 class="display-4">
-                            <i class="fas fa-users"></i> 4
-                        </h4>
-                        <a href="users.html" class="btn btn-outline-light btn-sm">View</a>
-                    </div>
+                <div class="d-grid mb-2">
+                <button class="btn btn-danger btn-block">Delete Image</button>
                 </div>
             </div>
         </div>

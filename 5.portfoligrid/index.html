@@ -11,12 +11,161 @@
 </head>
 <body>
 <!-- START HERE -->
+<div class="container">
+    <header id="main-header">
+        <div class="row no-gutters">
+            <div class="col-lg-4 col-md-5">
+                <img src="img/person1.jpg" alt="">
+            </div>
+            <div class="col-lg-8 col-md-7">
+                <div class="d-flex flex-column">
+                    <div class="p-5 bg-dark text-white">
+                        <div class="d-flex flex-row justify-content-between align-items-center">
+                            <h1 class="display-4">John Doe</h1>
+                            <div class="d-none d-md-block"> <!-- Display only if screen >= medium -->
+                                <a href="http:/twitter.com" class="text-white">
+                                    <i class="fab fa-twitter"></i>
+                                </a>
+                            </div>
+                            <div>
+                                <a href="http:/facebook.com" class="text-white">
+                                    <i class="fab fa-facebook"></i>
+                                </a>
+                            </div>
+                            <div> 
+                                <a href="http:/linkedin.com" class="text-white">
+                                    <i class="fab fa-linkedin"></i>
+                                </a>
+                            </div>
+                            <div>
+                                <a href="http:/github.com" class="text-white">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-4 bg-black">
+                        Experienced Full Stack Web Developer
+                    </div>
+                    <div>
+                        <div class="d-flex flex-row text-white align-items-stretch text-center">
+                            <div class="port-item bg-primary p-4 flex-fill" data-bs-toggle="collapse" data-bs-target="#home">
+                                <i class="fas fa-home fa-2x d-block"></i>
+                                <span class="d-none d-sm-block">Home</span>
+                            </div>
+                            <div class="port-item bg-success p-4 flex-fill" data-bs-toggle="collapse" data-bs-target="#resume">
+                                <i class="fas fa-graduation-cap fa-2x d-block"></i>
+                                <span class="d-none d-sm-block">Resume</span>
+                            </div>
+                            <div class="port-item bg-warning p-4 flex-fill" data-bs-toggle="collapse" data-bs-target="#work">
+                                <i class="fas fa-folder-open fa-2x d-block"></i>
+                                <span class="d-none d-sm-block">Work</span>
+                            </div>
+                            <div class="port-item bg-danger p-4 flex-fill" data-bs-toggle="collapse" data-bs-target="#contact">
+                                <i class="fas fa-envelope fa-2x d-block"></i>
+                                <span class="d-none d-sm-block">Contact</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- HOME -->
+    <div class="collapse show" id="home">
+        <div class="card card-body bg-primary text-white py-5">
+            <h2>Welcome To My Page</h2>
+            <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil, ea.</p>
+        </div>
+        <div class="card card-body py-5">
+            <h3>My Skills</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat veritatis vitae saepe dolorem illum cum!</p>
+            <hr>
+            <h4>HTML 5</h4> 
+            <div class="progress mb-3">
+                <div class="progress-bar bg-success" style="width:100%"></div>
+            </div>
+            <h4>CSS 3</h4> 
+            <div class="progress mb-3">
+                <div class="progress-bar bg-success" style="width:100%"></div>
+            </div>
+            <h4>JavaScript</h4> 
+            <div class="progress mb-3">
+                <div class="progress-bar bg-success" style="width:90%"></div>
+            </div>
+            <h4>PHP</h4> 
+            <div class="progress mb-3">
+                <div class="progress-bar bg-success" style="width:80%"></div>
+            </div>
+            <h4>Python</h4> 
+            <div class="progress mb-3">
+                <div class="progress-bar bg-success" style="width:70%"></div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="collapse" id="resume">
+        <div class="bg-success">
+          Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user activates the relevant trigger.
+        </div>
+    </div>
+    <div class="collapse" id="work">
+        <div class="bg-warning">
+          Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user activates the relevant trigger.
+        </div>
+    </div>
+    <div class="collapse" id="contact">
+        <div class="bg-danger">
+          Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user activates the relevant trigger.
+        </div>
+    </div>
+
+
+    <!-- FOOTER -->
+    <footer id="main-footer" class="p-5 bg-dark text-white">
+        <div class="row">
+            <div class="col-md-6">
+                <a href="#" class="btn btn-outline-light">
+                    <i class="fas fa-cloud"></i> Download Resume
+                </a>
+            </div>
+        </div>
+    </footer>
+</div>
+
+
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>    
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
     <script>
         // Get the current year for the copyright
         $('#year').text(new Date().getFullYear());
+
+        $('#home').on('show.bs.collapse', function() {
+            $('#resume').collapse('hide');
+            $('#work').collapse('hide');
+            $('#contact').collapse('hide');
+        })  
+
+        $('#resume').on('show.bs.collapse', function() {
+            $('#home').collapse('hide');
+            $('#work').collapse('hide');
+            $('#contact').collapse('hide');
+        })  
+
+        $('#work').on('show.bs.collapse', function() {
+            $('#resume').collapse('hide');
+            $('#home').collapse('hide');
+            $('#contact').collapse('hide');
+        })  
+
+        $('#contact').on('show.bs.collapse', function() {
+            $('#resume').collapse('hide');
+            $('#work').collapse('hide');
+            $('#home').collapse('hide');
+        })  
     </script>
 </body>
 </html>

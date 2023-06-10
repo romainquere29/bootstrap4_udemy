@@ -2,11 +2,15 @@
   "name": "frontend",
   "version": "1.0.0",
   "description": "MenuGenerator",
-  "main": "index.html",
+  "default": "index.html",
   "scripts": {
     "start": "parcel index.html",
     "build": "parcel build index.html"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "@parcel/transformer-sass": "^2.9.2",
+    "parcel": "^2.9.2"
+  }
 }

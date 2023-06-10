@@ -8,20 +8,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css" integrity="sha512-mSYUmp1HYZDFaVKK//63EcZq4iFWFjxSL+Z3T/aCt4IO9Cejm03q3NKKYN6pFQzY0SBOr8h+eCIAZHPXcpZaNw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="css/style.css">
-
-    <!-- Test Datepicker -->
-    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
-    <link rel="stylesheet" href="/resources/demos/style.css">
-    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
-    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
-    <script>
-    $( function() {
-        $.datepicker.setDefaults( $.datepicker.regional[ "fr" ] );
-        $( ".datepicker" ).datepicker();
-    } );
-    </script>
-    <!-- End Test Datepicker -->
-
+    <script type="module" src="src/js/controller.js"></script>
     <title>Menu Generator</title>
 </head>
 <body>
@@ -161,12 +148,53 @@
                     <div class="card  bg-warning" style="width: 20rem;">
                         <div class="card-body">
                             <h4 class="card-title">Samedi 04 mars 2023</h4>
-                            <h6 class="card-subtitle text-muted">Midi</h6>
+                            <h6 class="card-subtitle text-muted">
+                                <div class="row">
+                                    <div class="col" >
+                                        Midi
+                                    </div>
+                                    <div class="col d-flex justify-content-end" >
+                                        <i class="fas fa-solid fa-user me-2"></i>
+                                        <p> - 2 +</p>
+                                    </div>
+                                </div>
+                            </h6>
                             <p class="card-text">
                                 <ul class="list-group list-group-flush">
-                                    <li class="list-group-item bg-warning">Oeufs mayo</li>
-                                    <li class="list-group-item bg-warning">Dinde à l'italienne</li>
-                                    <li class="list-group-item bg-warning">Fromage</li>
+                                    <li class="list-group-item bg-warning">
+                                        <div class="row">
+                                            <div class="col-10" >
+                                                <i class="fas fa-solid fa-egg me-2"></i>
+                                                Oeufs mayo
+                                            </div>
+                                            <div class="col-2 d-flex justify-content-end" >
+                                                <i class="fas fa-solid fa-pen me-1"></i>
+                                                <i class="fas fa-solid fa-trash"></i>
+                                            </div>
+                                        </row>
+                                    </li>
+                                    <li class="list-group-item bg-warning">
+                                        <div class="row">
+                                            <div class="col-10" >
+                                                <i class="fas fa-solid fa-bowl-food me-2"></i>
+                                                Dinde a l'italienne
+                                            </div>
+                                            <div class="col-2 d-flex justify-content-end" >
+                                                <i class="fas fa-solid fa-pen me-1"></i>
+                                                <i class="fas fa-solid fa-trash"></i>
+                                            </div>                                        </row>
+                                    </li>                                  
+                                    <li class="list-group-item bg-warning">
+                                        <div class="row">
+                                            <div class="col-10" >
+                                                <i class="fas fa-solid fa-ice-cream me-2"></i>
+                                                Fromage
+                                            </div>
+                                            <div class="col-2 d-flex justify-content-end" >
+                                                <i class="fas fa-solid fa-pen me-1"></i>
+                                                <i class="fas fa-solid fa-trash"></i>
+                                            </div>                                        </row>
+                                    </li>                                  
                                 </ul>
                             </p>
                             <a href="#" class="card-link">Voir plus</a>
@@ -244,31 +272,6 @@
 
 
     <script>
-
-        // $('#home').on('show.bs.collapse', function() {
-        //     $('#resume').collapse('hide');
-        //     $('#work').collapse('hide');
-        //     $('#contact').collapse('hide');
-        // })  
-
-        // $('#resume').on('show.bs.collapse', function() {
-        //     $('#home').collapse('hide');
-        //     $('#work').collapse('hide');
-        //     $('#contact').collapse('hide');
-        // })  
-
-        // $('#work').on('show.bs.collapse', function() {
-        //     $('#resume').collapse('hide');
-        //     $('#home').collapse('hide');
-        //     $('#contact').collapse('hide');
-        // })  
-
-        // $('#contact').on('show.bs.collapse', function() {
-        //     $('#resume').collapse('hide');
-        //     $('#work').collapse('hide');
-        //     $('#home').collapse('hide');
-        // })  
-
 
         $('.port-item').click(function() {
          $('.collapse').collapse('hide');

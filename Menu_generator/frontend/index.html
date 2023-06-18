@@ -84,25 +84,26 @@
         </div>
     </header>
 
-    <!-- HOME -->
+    <!-- MENU -->
     <div class="collapse show" id="menu">
         <div class="card card-body bg-primary text-white">
             <h2>Mon Menu</h2>
-                <form action="#">
-                    <div class="row"  style="border:1px solid red">
-                        <div class="col-6" >
-                            <div class="row align-items-center" style="border:1px solid red">
+                <!-- Bar Generation -->
+                <form class="form" action="#">
+                    <div class="row"  style="border:none">
+                        <div class="col-12 col-lg-6" >
+                            <div class="row align-items-center" style="border:none">
                                 <div class="input-group">
                                     <span class="input-group-text">Du </span>
                                     <!-- <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)"> -->
-                                    <input type="text" class="form-control datepicker" id="datepicker">
+                                    <input type="text" class="form-control datepicker" id="startDate">
                                     <span class="input-group-text">au </span>
-                                    <input type="text" class="form-control datepicker" id="datepicker2">
+                                    <input type="text" class="form-control datepicker" id="endDate">
                                     <!-- Mes menus du  <input type="text" id="datepicker"> au  <input type="text" id="datepicker">
                                     <p>Date: <input type="text" id="datepicker"></p> -->
                                 </div>  
                             </div>   
-                            <div class="row align-items-center" style="border:1px solid red">
+                            <div class="row align-items-center" style="border:none">
                                 <div class="col-6 offset-3">
                                     <div class="input-group">
                                         <!-- <input type="checkbox" class="form-control" id="cleverSuggest" name="cleverSuggest" value="cleverSuggest"> -->
@@ -116,14 +117,14 @@
                             </div>  
                         </div>
 
-                        <div class="col-2" style="border:1px solid red">
+                        <div class="col-4 col-lg-2" style="border:none">
                             <input type="checkbox"  id="launch" name="launch" value="launch">
                             <label for="launch">Déjeuner</label><br>
                             <input type="checkbox"  id="diner" name="diner" value="diner">
                             <label for="diner">Diner</label><br>
                         </div>
 
-                        <div class="col-2" style="border:1px solid red">
+                        <div class="col-4 col-lg-2" style="border:none">
                             <input type="checkbox"  id="starter" name="starter" value="starter">
                             <label for="starter">Entrée</label><br>
                             <input type="checkbox"  id="mainDish" name="mainDish" value="mainDish">
@@ -132,27 +133,32 @@
                             <label for="dessert">Desserts</label><br>
                         </div>
 
-                        <div class="col-2 d-flex flex-column align-items-center" style="border:1px solid red">
+                        <div class="col-4 col-lg-2 d-flex flex-column align-items-center" style="border:none">
                             <div>
                                 <input type="checkbox"  id="cleverSuggest" name="cleverSuggest" value="cleverSuggest">
                                 <label for="cleverSuggest">Suggestions autos</label><br>
                             </div>
                             <div>  
-                                <button class="btn btn-outline-light" type="submit">Générer menu</button>
+                                <button class="btn btn-outline-light"  id="submitSearch" type="submit">Générer menu</button>
                             </div>
                         </div>
                     </div>    
-            </form>
-            <div class="row mt-4" >
-                <div class="col-md-3 d-flex justify-content-center" style="border:1px solid red">
+                </form>
+
+        <!-- Affichage Menu -->
+            <!-- Ligne 1 -->
+            <div class="row" >
+                <!-- 1 repas primary  --> 
+                <!-- 100% sur petit écran , 50% sur écran moyen (>768 px), 25% sur grand écran (>1200 px) -->
+                <div class="col-12 col-md-6 col-xl-3 d-flex justify-content-center mt-4" style="border:none">
                     <!-- SIMPLE CARD -->
                     <div class="card  bg-warning" style="width: 20rem;">
                         <div class="card-body">
-                            <h4 class="card-title">Samedi 04 mars 2023</h4>
+                            <h4 class="card-title">Samedi 04 mars</h4>
                             <h6 class="card-subtitle">
                                 <div class="row">
                                     <div class="col d-flex justify-content-center" >
-                                        Midi
+                                        Déjeuner
                                     </div>
                                     <div class="col d-flex justify-content-end" >
                                         <i class="fas fa-solid fa-user me-2"></i>
@@ -195,7 +201,8 @@
                                             <div class="col-2 d-flex justify-content-end" >
                                                 <i class="fas fa-solid fa-pen me-1"></i>
                                                 <i class="fas fa-solid fa-trash"></i>
-                                            </div>                                        </row>
+                                            </div>                                        
+                                        </div>
                                     </li>                                  
                                 </ul>
                             </p>
@@ -203,28 +210,1667 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-3 d-flex justify-content-center" style="border:1px solid red">repas x</div>
-                <div class="col-md-3 d-flex justify-content-center" style="border:1px solid red">repas x</div>
-                <div class="col-md-3 d-flex justify-content-center" style="border:1px solid red">repas x</div>                 
+                <!-- 1 repas secondary --> 
+                <div class="col-12 col-md-6 col-xl-3 d-flex justify-content-center mt-4" style="border:none">
+                    <!-- SIMPLE CARD -->
+                    <div class="card  bg-secondary" style="width: 20rem;">
+                        <div class="card-body">
+                            <h4 class="card-title">Samedi 04 mars</h4>
+                            <h6 class="card-subtitle">
+                                <div class="row">
+                                    <div class="col d-flex justify-content-center" >
+                                        Diner
+                                    </div>
+                                    <div class="col d-flex justify-content-end" >
+                                        <i class="fas fa-solid fa-user me-2"></i>
+                                        <p> - 2 +</p>
+                                    </div>
+                                </div>
+                            </h6>
+                            <p class="card-text">
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item bg-secondary">
+                                        <div class="row">
+                                            <div class="col-10" >
+                                                <i class="fas fa-solid fa-egg me-2"></i>
+                                                Oeufs mayo
+                                            </div>
+                                            <div class="col-2 d-flex justify-content-end" >
+                                                <i class="fas fa-solid fa-pen me-1"></i>
+                                                <i class="fas fa-solid fa-trash"></i>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="list-group-item bg-secondary">
+                                        <div class="row">
+                                            <div class="col-10" >
+                                                <i class="fas fa-solid fa-bowl-food me-2"></i>
+                                                Dinde a l'italienne
+                                            </div>
+                                            <div class="col-2 d-flex justify-content-end" >
+                                                <i class="fas fa-solid fa-pen me-1"></i>
+                                                <i class="fas fa-solid fa-trash"></i>
+                                            </div>                                        
+                                        </div>
+                                    </li>                                  
+                                    <li class="list-group-item bg-secondary">
+                                        <div class="row">
+                                            <div class="col-10" >
+                                                <i class="fas fa-solid fa-ice-cream me-2"></i>
+                                                Fromage
+                                            </div>
+                                            <div class="col-2 d-flex justify-content-end" >
+                                                <i class="fas fa-solid fa-pen me-1"></i>
+                                                <i class="fas fa-solid fa-trash"></i>
+                                            </div>                                        
+                                        </div>
+                                    </li>                                  
+                                </ul>
+                            </p>
+                            <a href="#" class="card-link">Voir plus</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- 1 repas primary --> 
+                <div class="col-12 col-md-6 col-xl-3 d-flex justify-content-center mt-4" style="border:none">
+                    <!-- SIMPLE CARD -->
+                    <div class="card  bg-warning" style="width: 20rem;">
+                        <div class="card-body">
+                            <h4 class="card-title">Dimanche 05 mars</h4>
+                            <h6 class="card-subtitle">
+                                <div class="row">
+                                    <div class="col d-flex justify-content-center" >
+                                        Déjeuner
+                                    </div>
+                                    <div class="col d-flex justify-content-end" >
+                                        <i class="fas fa-solid fa-user me-2"></i>
+                                        <p> - 2 +</p>
+                                    </div>
+                                </div>
+                            </h6>
+                            <p class="card-text">
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item bg-warning">
+                                        <div class="row">
+                                            <div class="col-10" >
+                                                <i class="fas fa-solid fa-egg me-2"></i>
+                                                Oeufs mayo
+                                            </div>
+                                            <div class="col-2 d-flex justify-content-end" >
+                                                <i class="fas fa-solid fa-pen me-1"></i>
+                                                <i class="fas fa-solid fa-trash"></i>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="list-group-item bg-warning">
+                                        <div class="row">
+                                            <div class="col-10" >
+                                                <i class="fas fa-solid fa-bowl-food me-2"></i>
+                                                Dinde a l'italienne
+                                            </div>
+                                            <div class="col-2 d-flex justify-content-end" >
+                                                <i class="fas fa-solid fa-pen me-1"></i>
+                                                <i class="fas fa-solid fa-trash"></i>
+                                            </div>                                        
+                                        </div>
+                                    </li>                                  
+                                    <li class="list-group-item bg-warning">
+                                        <div class="row">
+                                            <div class="col-10" >
+                                                <i class="fas fa-solid fa-ice-cream me-2"></i>
+                                                Fromage
+                                            </div>
+                                            <div class="col-2 d-flex justify-content-end" >
+                                                <i class="fas fa-solid fa-pen me-1"></i>
+                                                <i class="fas fa-solid fa-trash"></i>
+                                            </div>                                        
+                                        </div>
+                                    </li>                                  
+                                </ul>
+                            </p>
+                            <a href="#" class="card-link">Voir plus</a>
+                        </div>
+                    </div>
+                </div>                
+                <!-- 1 repas secondary--> 
+                <div class="col-12 col-md-6 col-xl-3 d-flex justify-content-center mt-4" style="border:none">
+                    <!-- SIMPLE CARD -->
+                    <div class="card  bg-secondary" style="width: 20rem;">
+                        <div class="card-body">
+                            <h4 class="card-title">Dimanche 05 mars</h4>
+                            <h6 class="card-subtitle">
+                                <div class="row">
+                                    <div class="col d-flex justify-content-center" >
+                                        Diner
+                                    </div>
+                                    <div class="col d-flex justify-content-end" >
+                                        <i class="fas fa-solid fa-user me-2"></i>
+                                        <p> - 2 +</p>
+                                    </div>
+                                </div>
+                            </h6>
+                            <p class="card-text">
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item bg-secondary">
+                                        <div class="row">
+                                            <div class="col-10" >
+                                                <i class="fas fa-solid fa-egg me-2"></i>
+                                                Oeufs mayo
+                                            </div>
+                                            <div class="col-2 d-flex justify-content-end" >
+                                                <i class="fas fa-solid fa-pen me-1"></i>
+                                                <i class="fas fa-solid fa-trash"></i>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="list-group-item bg-secondary">
+                                        <div class="row">
+                                            <div class="col-10" >
+                                                <i class="fas fa-solid fa-bowl-food me-2"></i>
+                                                Dinde a l'italienne
+                                            </div>
+                                            <div class="col-2 d-flex justify-content-end" >
+                                                <i class="fas fa-solid fa-pen me-1"></i>
+                                                <i class="fas fa-solid fa-trash"></i>
+                                            </div>                                        
+                                        </div>
+                                    </li>                                  
+                                    <li class="list-group-item bg-secondary">
+                                        <div class="row">
+                                            <div class="col-10" >
+                                                <i class="fas fa-solid fa-ice-cream me-2"></i>
+                                                Fromage
+                                            </div>
+                                            <div class="col-2 d-flex justify-content-end" >
+                                                <i class="fas fa-solid fa-pen me-1"></i>
+                                                <i class="fas fa-solid fa-trash"></i>
+                                            </div>                                        
+                                        </div>
+                                    </li>                                  
+                                </ul>
+                            </p>
+                            <a href="#" class="card-link">Voir plus</a>
+                        </div>
+                    </div>
+                </div>   
+                <!-- 1 repas primary  --> 
+                <div class="col-12 col-md-6 col-xl-3 d-flex justify-content-center mt-4" style="border:none">
+                    <!-- SIMPLE CARD -->
+                    <div class="card  bg-warning" style="width: 20rem;">
+                        <div class="card-body">
+                            <h4 class="card-title">Samedi 04 mars</h4>
+                            <h6 class="card-subtitle">
+                                <div class="row">
+                                    <div class="col d-flex justify-content-center" >
+                                        Déjeuner
+                                    </div>
+                                    <div class="col d-flex justify-content-end" >
+                                        <i class="fas fa-solid fa-user me-2"></i>
+                                        <p> - 2 +</p>
+                                    </div>
+                                </div>
+                            </h6>
+                            <p class="card-text">
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item bg-warning">
+                                        <div class="row">
+                                            <div class="col-10" >
+                                                <i class="fas fa-solid fa-egg me-2"></i>
+                                                Oeufs mayo
+                                            </div>
+                                            <div class="col-2 d-flex justify-content-end" >
+                                                <i class="fas fa-solid fa-pen me-1"></i>
+                                                <i class="fas fa-solid fa-trash"></i>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="list-group-item bg-warning">
+                                        <div class="row">
+                                            <div class="col-10" >
+                                                <i class="fas fa-solid fa-bowl-food me-2"></i>
+                                                Dinde a l'italienne
+                                            </div>
+                                            <div class="col-2 d-flex justify-content-end" >
+                                                <i class="fas fa-solid fa-pen me-1"></i>
+                                                <i class="fas fa-solid fa-trash"></i>
+                                            </div>                                        
+                                        </div>
+                                    </li>                                  
+                                    <li class="list-group-item bg-warning">
+                                        <div class="row">
+                                            <div class="col-10" >
+                                                <i class="fas fa-solid fa-ice-cream me-2"></i>
+                                                Fromage
+                                            </div>
+                                            <div class="col-2 d-flex justify-content-end" >
+                                                <i class="fas fa-solid fa-pen me-1"></i>
+                                                <i class="fas fa-solid fa-trash"></i>
+                                            </div>                                        
+                                        </div>
+                                    </li>                                  
+                                </ul>
+                            </p>
+                            <a href="#" class="card-link">Voir plus</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- 1 repas secondary --> 
+                <div class="col-12 col-md-6 col-xl-3 d-flex justify-content-center mt-4" style="border:none">
+                    <!-- SIMPLE CARD -->
+                    <div class="card  bg-secondary" style="width: 20rem;">
+                        <div class="card-body">
+                            <h4 class="card-title">Samedi 04 mars</h4>
+                            <h6 class="card-subtitle">
+                                <div class="row">
+                                    <div class="col d-flex justify-content-center" >
+                                        Diner
+                                    </div>
+                                    <div class="col d-flex justify-content-end" >
+                                        <i class="fas fa-solid fa-user me-2"></i>
+                                        <p> - 2 +</p>
+                                    </div>
+                                </div>
+                            </h6>
+                            <p class="card-text">
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item bg-secondary">
+                                        <div class="row">
+                                            <div class="col-10" >
+                                                <i class="fas fa-solid fa-egg me-2"></i>
+                                                Oeufs mayo
+                                            </div>
+                                            <div class="col-2 d-flex justify-content-end" >
+                                                <i class="fas fa-solid fa-pen me-1"></i>
+                                                <i class="fas fa-solid fa-trash"></i>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="list-group-item bg-secondary">
+                                        <div class="row">
+                                            <div class="col-10" >
+                                                <i class="fas fa-solid fa-bowl-food me-2"></i>
+                                                Dinde a l'italienne
+                                            </div>
+                                            <div class="col-2 d-flex justify-content-end" >
+                                                <i class="fas fa-solid fa-pen me-1"></i>
+                                                <i class="fas fa-solid fa-trash"></i>
+                                            </div>                                        
+                                        </div>
+                                    </li>                                  
+                                    <li class="list-group-item bg-secondary">
+                                        <div class="row">
+                                            <div class="col-10" >
+                                                <i class="fas fa-solid fa-ice-cream me-2"></i>
+                                                Fromage
+                                            </div>
+                                            <div class="col-2 d-flex justify-content-end" >
+                                                <i class="fas fa-solid fa-pen me-1"></i>
+                                                <i class="fas fa-solid fa-trash"></i>
+                                            </div>                                        
+                                        </div>
+                                    </li>                                  
+                                </ul>
+                            </p>
+                            <a href="#" class="card-link">Voir plus</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- 1 repas primary --> 
+                <div class="col-12 col-md-6 col-xl-3 d-flex justify-content-center mt-4" style="border:none">
+                    <!-- SIMPLE CARD -->
+                    <div class="card  bg-warning" style="width: 20rem;">
+                        <div class="card-body">
+                            <h4 class="card-title">Dimanche 05 mars</h4>
+                            <h6 class="card-subtitle">
+                                <div class="row">
+                                    <div class="col d-flex justify-content-center" >
+                                        Déjeuner
+                                    </div>
+                                    <div class="col d-flex justify-content-end" >
+                                        <i class="fas fa-solid fa-user me-2"></i>
+                                        <p> - 2 +</p>
+                                    </div>
+                                </div>
+                            </h6>
+                            <p class="card-text">
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item bg-warning">
+                                        <div class="row">
+                                            <div class="col-10" >
+                                                <i class="fas fa-solid fa-egg me-2"></i>
+                                                Oeufs mayo
+                                            </div>
+                                            <div class="col-2 d-flex justify-content-end" >
+                                                <i class="fas fa-solid fa-pen me-1"></i>
+                                                <i class="fas fa-solid fa-trash"></i>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="list-group-item bg-warning">
+                                        <div class="row">
+                                            <div class="col-10" >
+                                                <i class="fas fa-solid fa-bowl-food me-2"></i>
+                                                Dinde a l'italienne
+                                            </div>
+                                            <div class="col-2 d-flex justify-content-end" >
+                                                <i class="fas fa-solid fa-pen me-1"></i>
+                                                <i class="fas fa-solid fa-trash"></i>
+                                            </div>                                        
+                                        </div>
+                                    </li>                                  
+                                    <li class="list-group-item bg-warning">
+                                        <div class="row">
+                                            <div class="col-10" >
+                                                <i class="fas fa-solid fa-ice-cream me-2"></i>
+                                                Fromage
+                                            </div>
+                                            <div class="col-2 d-flex justify-content-end" >
+                                                <i class="fas fa-solid fa-pen me-1"></i>
+                                                <i class="fas fa-solid fa-trash"></i>
+                                            </div>                                        
+                                        </div>
+                                    </li>                                  
+                                </ul>
+                            </p>
+                            <a href="#" class="card-link">Voir plus</a>
+                        </div>
+                    </div>
+                </div>                
+                <!-- 1 repas secondary--> 
+                <div class="col-12 col-md-6 col-xl-3 d-flex justify-content-center mt-4" style="border:none">
+                    <!-- SIMPLE CARD -->
+                    <div class="card  bg-secondary" style="width: 20rem;">
+                        <div class="card-body">
+                            <h4 class="card-title">Dimanche 05 mars</h4>
+                            <h6 class="card-subtitle">
+                                <div class="row">
+                                    <div class="col d-flex justify-content-center" >
+                                        Diner
+                                    </div>
+                                    <div class="col d-flex justify-content-end" >
+                                        <i class="fas fa-solid fa-user me-2"></i>
+                                        <p> - 2 +</p>
+                                    </div>
+                                </div>
+                            </h6>
+                            <p class="card-text">
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item bg-secondary">
+                                        <div class="row">
+                                            <div class="col-10" >
+                                                <i class="fas fa-solid fa-egg me-2"></i>
+                                                Oeufs mayo
+                                            </div>
+                                            <div class="col-2 d-flex justify-content-end" >
+                                                <i class="fas fa-solid fa-pen me-1"></i>
+                                                <i class="fas fa-solid fa-trash"></i>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="list-group-item bg-secondary">
+                                        <div class="row">
+                                            <div class="col-10" >
+                                                <i class="fas fa-solid fa-bowl-food me-2"></i>
+                                                Dinde a l'italienne
+                                            </div>
+                                            <div class="col-2 d-flex justify-content-end" >
+                                                <i class="fas fa-solid fa-pen me-1"></i>
+                                                <i class="fas fa-solid fa-trash"></i>
+                                            </div>                                        
+                                        </div>
+                                    </li>                                  
+                                    <li class="list-group-item bg-secondary">
+                                        <div class="row">
+                                            <div class="col-10" >
+                                                <i class="fas fa-solid fa-ice-cream me-2"></i>
+                                                Fromage
+                                            </div>
+                                            <div class="col-2 d-flex justify-content-end" >
+                                                <i class="fas fa-solid fa-pen me-1"></i>
+                                                <i class="fas fa-solid fa-trash"></i>
+                                            </div>                                        
+                                        </div>
+                                    </li>                                  
+                                </ul>
+                            </p>
+                            <a href="#" class="card-link">Voir plus</a>
+                        </div>
+                    </div>
+                </div>  
+                <!-- 1 repas primary  --> 
+                <div class="col-12 col-md-6 col-xl-3 d-flex justify-content-center mt-4" style="border:none">
+                    <!-- SIMPLE CARD -->
+                    <div class="card  bg-warning" style="width: 20rem;">
+                        <div class="card-body">
+                            <h4 class="card-title">Samedi 04 mars</h4>
+                            <h6 class="card-subtitle">
+                                <div class="row">
+                                    <div class="col d-flex justify-content-center" >
+                                        Déjeuner
+                                    </div>
+                                    <div class="col d-flex justify-content-end" >
+                                        <i class="fas fa-solid fa-user me-2"></i>
+                                        <p> - 2 +</p>
+                                    </div>
+                                </div>
+                            </h6>
+                            <p class="card-text">
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item bg-warning">
+                                        <div class="row">
+                                            <div class="col-10" >
+                                                <i class="fas fa-solid fa-egg me-2"></i>
+                                                Oeufs mayo
+                                            </div>
+                                            <div class="col-2 d-flex justify-content-end" >
+                                                <i class="fas fa-solid fa-pen me-1"></i>
+                                                <i class="fas fa-solid fa-trash"></i>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="list-group-item bg-warning">
+                                        <div class="row">
+                                            <div class="col-10" >
+                                                <i class="fas fa-solid fa-bowl-food me-2"></i>
+                                                Dinde a l'italienne
+                                            </div>
+                                            <div class="col-2 d-flex justify-content-end" >
+                                                <i class="fas fa-solid fa-pen me-1"></i>
+                                                <i class="fas fa-solid fa-trash"></i>
+                                            </div>                                        
+                                        </div>
+                                    </li>                                  
+                                    <li class="list-group-item bg-warning">
+                                        <div class="row">
+                                            <div class="col-10" >
+                                                <i class="fas fa-solid fa-ice-cream me-2"></i>
+                                                Fromage
+                                            </div>
+                                            <div class="col-2 d-flex justify-content-end" >
+                                                <i class="fas fa-solid fa-pen me-1"></i>
+                                                <i class="fas fa-solid fa-trash"></i>
+                                            </div>                                        
+                                        </div>
+                                    </li>                                  
+                                </ul>
+                            </p>
+                            <a href="#" class="card-link">Voir plus</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- 1 repas secondary --> 
+                <div class="col-12 col-md-6 col-xl-3 d-flex justify-content-center mt-4" style="border:none">
+                    <!-- SIMPLE CARD -->
+                    <div class="card  bg-secondary" style="width: 20rem;">
+                        <div class="card-body">
+                            <h4 class="card-title">Samedi 04 mars</h4>
+                            <h6 class="card-subtitle">
+                                <div class="row">
+                                    <div class="col d-flex justify-content-center" >
+                                        Diner
+                                    </div>
+                                    <div class="col d-flex justify-content-end" >
+                                        <i class="fas fa-solid fa-user me-2"></i>
+                                        <p> - 2 +</p>
+                                    </div>
+                                </div>
+                            </h6>
+                            <p class="card-text">
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item bg-secondary">
+                                        <div class="row">
+                                            <div class="col-10" >
+                                                <i class="fas fa-solid fa-egg me-2"></i>
+                                                Oeufs mayo
+                                            </div>
+                                            <div class="col-2 d-flex justify-content-end" >
+                                                <i class="fas fa-solid fa-pen me-1"></i>
+                                                <i class="fas fa-solid fa-trash"></i>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="list-group-item bg-secondary">
+                                        <div class="row">
+                                            <div class="col-10" >
+                                                <i class="fas fa-solid fa-bowl-food me-2"></i>
+                                                Dinde a l'italienne
+                                            </div>
+                                            <div class="col-2 d-flex justify-content-end" >
+                                                <i class="fas fa-solid fa-pen me-1"></i>
+                                                <i class="fas fa-solid fa-trash"></i>
+                                            </div>                                        
+                                        </div>
+                                    </li>                                  
+                                    <li class="list-group-item bg-secondary">
+                                        <div class="row">
+                                            <div class="col-10" >
+                                                <i class="fas fa-solid fa-ice-cream me-2"></i>
+                                                Fromage
+                                            </div>
+                                            <div class="col-2 d-flex justify-content-end" >
+                                                <i class="fas fa-solid fa-pen me-1"></i>
+                                                <i class="fas fa-solid fa-trash"></i>
+                                            </div>                                        
+                                        </div>
+                                    </li>                                  
+                                </ul>
+                            </p>
+                            <a href="#" class="card-link">Voir plus</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- 1 repas primary --> 
+                <div class="col-12 col-md-6 col-xl-3 d-flex justify-content-center mt-4" style="border:none">
+                    <!-- SIMPLE CARD -->
+                    <div class="card  bg-warning" style="width: 20rem;">
+                        <div class="card-body">
+                            <h4 class="card-title">Dimanche 05 mars</h4>
+                            <h6 class="card-subtitle">
+                                <div class="row">
+                                    <div class="col d-flex justify-content-center" >
+                                        Déjeuner
+                                    </div>
+                                    <div class="col d-flex justify-content-end" >
+                                        <i class="fas fa-solid fa-user me-2"></i>
+                                        <p> - 2 +</p>
+                                    </div>
+                                </div>
+                            </h6>
+                            <p class="card-text">
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item bg-warning">
+                                        <div class="row">
+                                            <div class="col-10" >
+                                                <i class="fas fa-solid fa-egg me-2"></i>
+                                                Oeufs mayo
+                                            </div>
+                                            <div class="col-2 d-flex justify-content-end" >
+                                                <i class="fas fa-solid fa-pen me-1"></i>
+                                                <i class="fas fa-solid fa-trash"></i>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="list-group-item bg-warning">
+                                        <div class="row">
+                                            <div class="col-10" >
+                                                <i class="fas fa-solid fa-bowl-food me-2"></i>
+                                                Dinde a l'italienne
+                                            </div>
+                                            <div class="col-2 d-flex justify-content-end" >
+                                                <i class="fas fa-solid fa-pen me-1"></i>
+                                                <i class="fas fa-solid fa-trash"></i>
+                                            </div>                                        
+                                        </div>
+                                    </li>                                  
+                                    <li class="list-group-item bg-warning">
+                                        <div class="row">
+                                            <div class="col-10" >
+                                                <i class="fas fa-solid fa-ice-cream me-2"></i>
+                                                Fromage
+                                            </div>
+                                            <div class="col-2 d-flex justify-content-end" >
+                                                <i class="fas fa-solid fa-pen me-1"></i>
+                                                <i class="fas fa-solid fa-trash"></i>
+                                            </div>                                        
+                                        </div>
+                                    </li>                                  
+                                </ul>
+                            </p>
+                            <a href="#" class="card-link">Voir plus</a>
+                        </div>
+                    </div>
+                </div>                
+                <!-- 1 repas secondary--> 
+                <div class="col-12 col-md-6 col-xl-3 d-flex justify-content-center mt-4" style="border:none">
+                    <!-- SIMPLE CARD -->
+                    <div class="card  bg-secondary" style="width: 20rem;">
+                        <div class="card-body">
+                            <h4 class="card-title">Dimanche 05 mars</h4>
+                            <h6 class="card-subtitle">
+                                <div class="row">
+                                    <div class="col d-flex justify-content-center" >
+                                        Diner
+                                    </div>
+                                    <div class="col d-flex justify-content-end" >
+                                        <i class="fas fa-solid fa-user me-2"></i>
+                                        <p> - 2 +</p>
+                                    </div>
+                                </div>
+                            </h6>
+                            <p class="card-text">
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item bg-secondary">
+                                        <div class="row">
+                                            <div class="col-10" >
+                                                <i class="fas fa-solid fa-egg me-2"></i>
+                                                Oeufs mayo
+                                            </div>
+                                            <div class="col-2 d-flex justify-content-end" >
+                                                <i class="fas fa-solid fa-pen me-1"></i>
+                                                <i class="fas fa-solid fa-trash"></i>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="list-group-item bg-secondary">
+                                        <div class="row">
+                                            <div class="col-10" >
+                                                <i class="fas fa-solid fa-bowl-food me-2"></i>
+                                                Dinde a l'italienne
+                                            </div>
+                                            <div class="col-2 d-flex justify-content-end" >
+                                                <i class="fas fa-solid fa-pen me-1"></i>
+                                                <i class="fas fa-solid fa-trash"></i>
+                                            </div>                                        
+                                        </div>
+                                    </li>                                  
+                                    <li class="list-group-item bg-secondary">
+                                        <div class="row">
+                                            <div class="col-10" >
+                                                <i class="fas fa-solid fa-ice-cream me-2"></i>
+                                                Fromage
+                                            </div>
+                                            <div class="col-2 d-flex justify-content-end" >
+                                                <i class="fas fa-solid fa-pen me-1"></i>
+                                                <i class="fas fa-solid fa-trash"></i>
+                                            </div>                                        
+                                        </div>
+                                    </li>                                  
+                                </ul>
+                            </p>
+                            <a href="#" class="card-link">Voir plus</a>
+                        </div>
+                    </div>
+                </div>  
+                <!-- 1 repas primary  --> 
+                <div class="col-12 col-md-6 col-xl-3 d-flex justify-content-center mt-4" style="border:none">
+                    <!-- SIMPLE CARD -->
+                    <div class="card  bg-warning" style="width: 20rem;">
+                        <div class="card-body">
+                            <h4 class="card-title">Samedi 04 mars</h4>
+                            <h6 class="card-subtitle">
+                                <div class="row">
+                                    <div class="col d-flex justify-content-center" >
+                                        Déjeuner
+                                    </div>
+                                    <div class="col d-flex justify-content-end" >
+                                        <i class="fas fa-solid fa-user me-2"></i>
+                                        <p> - 2 +</p>
+                                    </div>
+                                </div>
+                            </h6>
+                            <p class="card-text">
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item bg-warning">
+                                        <div class="row">
+                                            <div class="col-10" >
+                                                <i class="fas fa-solid fa-egg me-2"></i>
+                                                Oeufs mayo
+                                            </div>
+                                            <div class="col-2 d-flex justify-content-end" >
+                                                <i class="fas fa-solid fa-pen me-1"></i>
+                                                <i class="fas fa-solid fa-trash"></i>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="list-group-item bg-warning">
+                                        <div class="row">
+                                            <div class="col-10" >
+                                                <i class="fas fa-solid fa-bowl-food me-2"></i>
+                                                Dinde a l'italienne
+                                            </div>
+                                            <div class="col-2 d-flex justify-content-end" >
+                                                <i class="fas fa-solid fa-pen me-1"></i>
+                                                <i class="fas fa-solid fa-trash"></i>
+                                            </div>                                        
+                                        </div>
+                                    </li>                                  
+                                    <li class="list-group-item bg-warning">
+                                        <div class="row">
+                                            <div class="col-10" >
+                                                <i class="fas fa-solid fa-ice-cream me-2"></i>
+                                                Fromage
+                                            </div>
+                                            <div class="col-2 d-flex justify-content-end" >
+                                                <i class="fas fa-solid fa-pen me-1"></i>
+                                                <i class="fas fa-solid fa-trash"></i>
+                                            </div>                                        
+                                        </div>
+                                    </li>                                  
+                                </ul>
+                            </p>
+                            <a href="#" class="card-link">Voir plus</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- 1 repas secondary --> 
+                <div class="col-12 col-md-6 col-xl-3 d-flex justify-content-center mt-4" style="border:none">
+                    <!-- SIMPLE CARD -->
+                    <div class="card  bg-secondary" style="width: 20rem;">
+                        <div class="card-body">
+                            <h4 class="card-title">Samedi 04 mars</h4>
+                            <h6 class="card-subtitle">
+                                <div class="row">
+                                    <div class="col d-flex justify-content-center" >
+                                        Diner
+                                    </div>
+                                    <div class="col d-flex justify-content-end" >
+                                        <i class="fas fa-solid fa-user me-2"></i>
+                                        <p> - 2 +</p>
+                                    </div>
+                                </div>
+                            </h6>
+                            <p class="card-text">
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item bg-secondary">
+                                        <div class="row">
+                                            <div class="col-10" >
+                                                <i class="fas fa-solid fa-egg me-2"></i>
+                                                Oeufs mayo
+                                            </div>
+                                            <div class="col-2 d-flex justify-content-end" >
+                                                <i class="fas fa-solid fa-pen me-1"></i>
+                                                <i class="fas fa-solid fa-trash"></i>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="list-group-item bg-secondary">
+                                        <div class="row">
+                                            <div class="col-10" >
+                                                <i class="fas fa-solid fa-bowl-food me-2"></i>
+                                                Dinde a l'italienne
+                                            </div>
+                                            <div class="col-2 d-flex justify-content-end" >
+                                                <i class="fas fa-solid fa-pen me-1"></i>
+                                                <i class="fas fa-solid fa-trash"></i>
+                                            </div>                                        
+                                        </div>
+                                    </li>                                  
+                                    <li class="list-group-item bg-secondary">
+                                        <div class="row">
+                                            <div class="col-10" >
+                                                <i class="fas fa-solid fa-ice-cream me-2"></i>
+                                                Fromage
+                                            </div>
+                                            <div class="col-2 d-flex justify-content-end" >
+                                                <i class="fas fa-solid fa-pen me-1"></i>
+                                                <i class="fas fa-solid fa-trash"></i>
+                                            </div>                                        
+                                        </div>
+                                    </li>                                  
+                                </ul>
+                            </p>
+                            <a href="#" class="card-link">Voir plus</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- 1 repas primary --> 
+                <div class="col-12 col-md-6 col-xl-3 d-flex justify-content-center mt-4" style="border:none">
+                    <!-- SIMPLE CARD -->
+                    <div class="card  bg-warning" style="width: 20rem;">
+                        <div class="card-body">
+                            <h4 class="card-title">Dimanche 05 mars</h4>
+                            <h6 class="card-subtitle">
+                                <div class="row">
+                                    <div class="col d-flex justify-content-center" >
+                                        Déjeuner
+                                    </div>
+                                    <div class="col d-flex justify-content-end" >
+                                        <i class="fas fa-solid fa-user me-2"></i>
+                                        <p> - 2 +</p>
+                                    </div>
+                                </div>
+                            </h6>
+                            <p class="card-text">
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item bg-warning">
+                                        <div class="row">
+                                            <div class="col-10" >
+                                                <i class="fas fa-solid fa-egg me-2"></i>
+                                                Oeufs mayo
+                                            </div>
+                                            <div class="col-2 d-flex justify-content-end" >
+                                                <i class="fas fa-solid fa-pen me-1"></i>
+                                                <i class="fas fa-solid fa-trash"></i>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="list-group-item bg-warning">
+                                        <div class="row">
+                                            <div class="col-10" >
+                                                <i class="fas fa-solid fa-bowl-food me-2"></i>
+                                                Dinde a l'italienne
+                                            </div>
+                                            <div class="col-2 d-flex justify-content-end" >
+                                                <i class="fas fa-solid fa-pen me-1"></i>
+                                                <i class="fas fa-solid fa-trash"></i>
+                                            </div>                                        
+                                        </div>
+                                    </li>                                  
+                                    <li class="list-group-item bg-warning">
+                                        <div class="row">
+                                            <div class="col-10" >
+                                                <i class="fas fa-solid fa-ice-cream me-2"></i>
+                                                Fromage
+                                            </div>
+                                            <div class="col-2 d-flex justify-content-end" >
+                                                <i class="fas fa-solid fa-pen me-1"></i>
+                                                <i class="fas fa-solid fa-trash"></i>
+                                            </div>                                        
+                                        </div>
+                                    </li>                                  
+                                </ul>
+                            </p>
+                            <a href="#" class="card-link">Voir plus</a>
+                        </div>
+                    </div>
+                </div>                
+                <!-- 1 repas secondary--> 
+                <div class="col-12 col-md-6 col-xl-3 d-flex justify-content-center mt-4" style="border:none">
+                    <!-- SIMPLE CARD -->
+                    <div class="card  bg-secondary" style="width: 20rem;">
+                        <div class="card-body">
+                            <h4 class="card-title">Dimanche 05 mars</h4>
+                            <h6 class="card-subtitle">
+                                <div class="row">
+                                    <div class="col d-flex justify-content-center" >
+                                        Diner
+                                    </div>
+                                    <div class="col d-flex justify-content-end" >
+                                        <i class="fas fa-solid fa-user me-2"></i>
+                                        <p> - 2 +</p>
+                                    </div>
+                                </div>
+                            </h6>
+                            <p class="card-text">
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item bg-secondary">
+                                        <div class="row">
+                                            <div class="col-10" >
+                                                <i class="fas fa-solid fa-egg me-2"></i>
+                                                Oeufs mayo
+                                            </div>
+                                            <div class="col-2 d-flex justify-content-end" >
+                                                <i class="fas fa-solid fa-pen me-1"></i>
+                                                <i class="fas fa-solid fa-trash"></i>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="list-group-item bg-secondary">
+                                        <div class="row">
+                                            <div class="col-10" >
+                                                <i class="fas fa-solid fa-bowl-food me-2"></i>
+                                                Dinde a l'italienne
+                                            </div>
+                                            <div class="col-2 d-flex justify-content-end" >
+                                                <i class="fas fa-solid fa-pen me-1"></i>
+                                                <i class="fas fa-solid fa-trash"></i>
+                                            </div>                                        
+                                        </div>
+                                    </li>                                  
+                                    <li class="list-group-item bg-secondary">
+                                        <div class="row">
+                                            <div class="col-10" >
+                                                <i class="fas fa-solid fa-ice-cream me-2"></i>
+                                                Fromage
+                                            </div>
+                                            <div class="col-2 d-flex justify-content-end" >
+                                                <i class="fas fa-solid fa-pen me-1"></i>
+                                                <i class="fas fa-solid fa-trash"></i>
+                                            </div>                                        
+                                        </div>
+                                    </li>                                  
+                                </ul>
+                            </p>
+                            <a href="#" class="card-link">Voir plus</a>
+                        </div>
+                    </div>
+                </div>           
             </div>
-            <div class="row" >
-                <div class="col-md-3 d-flex justify-content-center" style="border:1px solid red">repas x</div>
-                <div class="col-md-3 d-flex justify-content-center" style="border:1px solid red">repas x</div>
-                <div class="col-md-3 d-flex justify-content-center" style="border:1px solid red">repas x</div>
-                <div class="col-md-3 d-flex justify-content-center" style="border:1px solid red">repas x</div>                 
+
+            <!-- Ligne 2 -->
+            <div class="row mt-4" >
+                <!-- 1 repas secondary --> 
+                <div class="col-md-3 d-flex justify-content-center" style="border:none">
+                    <!-- SIMPLE CARD -->
+                    <div class="card  bg-secondary" style="width: 20rem;">
+                        <div class="card-body">
+                            <h4 class="card-title">Samedi 04 mars</h4>
+                            <h6 class="card-subtitle">
+                                <div class="row">
+                                    <div class="col d-flex justify-content-center" >
+                                        Diner
+                                    </div>
+                                    <div class="col d-flex justify-content-end" >
+                                        <i class="fas fa-solid fa-user me-2"></i>
+                                        <p> - 2 +</p>
+                                    </div>
+                                </div>
+                            </h6>
+                            <p class="card-text">
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item bg-secondary">
+                                        <div class="row">
+                                            <div class="col-10" >
+                                                <i class="fas fa-solid fa-egg me-2"></i>
+                                                Oeufs mayo
+                                            </div>
+                                            <div class="col-2 d-flex justify-content-end" >
+                                                <i class="fas fa-solid fa-pen me-1"></i>
+                                                <i class="fas fa-solid fa-trash"></i>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="list-group-item bg-secondary">
+                                        <div class="row">
+                                            <div class="col-10" >
+                                                <i class="fas fa-solid fa-bowl-food me-2"></i>
+                                                Dinde a l'italienne
+                                            </div>
+                                            <div class="col-2 d-flex justify-content-end" >
+                                                <i class="fas fa-solid fa-pen me-1"></i>
+                                                <i class="fas fa-solid fa-trash"></i>
+                                            </div>                                        
+                                        </div>
+                                    </li>                                  
+                                    <li class="list-group-item bg-secondary">
+                                        <div class="row">
+                                            <div class="col-10" >
+                                                <i class="fas fa-solid fa-ice-cream me-2"></i>
+                                                Fromage
+                                            </div>
+                                            <div class="col-2 d-flex justify-content-end" >
+                                                <i class="fas fa-solid fa-pen me-1"></i>
+                                                <i class="fas fa-solid fa-trash"></i>
+                                            </div>                                        
+                                        </div>
+                                    </li>                                  
+                                </ul>
+                            </p>
+                            <a href="#" class="card-link">Voir plus</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- 1 repas primary --> 
+                <div class="col-md-3 d-flex justify-content-center" style="border:none">
+                    <!-- SIMPLE CARD -->
+                    <div class="card  bg-warning" style="width: 20rem;">
+                        <div class="card-body">
+                            <h4 class="card-title">Samedi 04 mars</h4>
+                            <h6 class="card-subtitle">
+                                <div class="row">
+                                    <div class="col d-flex justify-content-center" >
+                                        Déjeuner
+                                    </div>
+                                    <div class="col d-flex justify-content-end" >
+                                        <i class="fas fa-solid fa-user me-2"></i>
+                                        <p> - 2 +</p>
+                                    </div>
+                                </div>
+                            </h6>
+                            <p class="card-text">
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item bg-warning">
+                                        <div class="row">
+                                            <div class="col-10" >
+                                                <i class="fas fa-solid fa-egg me-2"></i>
+                                                Oeufs mayo
+                                            </div>
+                                            <div class="col-2 d-flex justify-content-end" >
+                                                <i class="fas fa-solid fa-pen me-1"></i>
+                                                <i class="fas fa-solid fa-trash"></i>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="list-group-item bg-warning">
+                                        <div class="row">
+                                            <div class="col-10" >
+                                                <i class="fas fa-solid fa-bowl-food me-2"></i>
+                                                Dinde a l'italienne
+                                            </div>
+                                            <div class="col-2 d-flex justify-content-end" >
+                                                <i class="fas fa-solid fa-pen me-1"></i>
+                                                <i class="fas fa-solid fa-trash"></i>
+                                            </div>                                        
+                                        </div>
+                                    </li>                                  
+                                    <li class="list-group-item bg-warning">
+                                        <div class="row">
+                                            <div class="col-10" >
+                                                <i class="fas fa-solid fa-ice-cream me-2"></i>
+                                                Fromage
+                                            </div>
+                                            <div class="col-2 d-flex justify-content-end" >
+                                                <i class="fas fa-solid fa-pen me-1"></i>
+                                                <i class="fas fa-solid fa-trash"></i>
+                                            </div>                                        
+                                        </div>
+                                    </li>                                  
+                                </ul>
+                            </p>
+                            <a href="#" class="card-link">Voir plus</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- 1 repas secondary --> 
+                <div class="col-md-3 d-flex justify-content-center" style="border:none">
+                    <!-- SIMPLE CARD -->
+                    <div class="card  bg-secondary" style="width: 20rem;">
+                        <div class="card-body">
+                            <h4 class="card-title">Dimanche 05 mars</h4>
+                            <h6 class="card-subtitle">
+                                <div class="row">
+                                    <div class="col d-flex justify-content-center" >
+                                        Diner
+                                    </div>
+                                    <div class="col d-flex justify-content-end" >
+                                        <i class="fas fa-solid fa-user me-2"></i>
+                                        <p> - 2 +</p>
+                                    </div>
+                                </div>
+                            </h6>
+                            <p class="card-text">
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item bg-secondary">
+                                        <div class="row">
+                                            <div class="col-10" >
+                                                <i class="fas fa-solid fa-egg me-2"></i>
+                                                Oeufs mayo
+                                            </div>
+                                            <div class="col-2 d-flex justify-content-end" >
+                                                <i class="fas fa-solid fa-pen me-1"></i>
+                                                <i class="fas fa-solid fa-trash"></i>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="list-group-item bg-secondary">
+                                        <div class="row">
+                                            <div class="col-10" >
+                                                <i class="fas fa-solid fa-bowl-food me-2"></i>
+                                                Dinde a l'italienne
+                                            </div>
+                                            <div class="col-2 d-flex justify-content-end" >
+                                                <i class="fas fa-solid fa-pen me-1"></i>
+                                                <i class="fas fa-solid fa-trash"></i>
+                                            </div>                                        
+                                        </div>
+                                    </li>                                  
+                                    <li class="list-group-item bg-secondary">
+                                        <div class="row">
+                                            <div class="col-10" >
+                                                <i class="fas fa-solid fa-ice-cream me-2"></i>
+                                                Fromage
+                                            </div>
+                                            <div class="col-2 d-flex justify-content-end" >
+                                                <i class="fas fa-solid fa-pen me-1"></i>
+                                                <i class="fas fa-solid fa-trash"></i>
+                                            </div>                                        
+                                        </div>
+                                    </li>                                  
+                                </ul>
+                            </p>
+                            <a href="#" class="card-link">Voir plus</a>
+                        </div>
+                    </div>
+                </div>  
+                <!-- 1 repas primary --> 
+                <div class="col-md-3 d-flex justify-content-center" style="border:none">
+                    <!-- SIMPLE CARD -->
+                    <div class="card  bg-warning" style="width: 20rem;">
+                        <div class="card-body">
+                            <h4 class="card-title">Dimanche 05 mars</h4>
+                            <h6 class="card-subtitle">
+                                <div class="row">
+                                    <div class="col d-flex justify-content-center" >
+                                        Déjeuner
+                                    </div>
+                                    <div class="col d-flex justify-content-end" >
+                                        <i class="fas fa-solid fa-user me-2"></i>
+                                        <p> - 2 +</p>
+                                    </div>
+                                </div>
+                            </h6>
+                            <p class="card-text">
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item bg-warning">
+                                        <div class="row">
+                                            <div class="col-10" >
+                                                <i class="fas fa-solid fa-egg me-2"></i>
+                                                Oeufs mayo
+                                            </div>
+                                            <div class="col-2 d-flex justify-content-end" >
+                                                <i class="fas fa-solid fa-pen me-1"></i>
+                                                <i class="fas fa-solid fa-trash"></i>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="list-group-item bg-warning">
+                                        <div class="row">
+                                            <div class="col-10" >
+                                                <i class="fas fa-solid fa-bowl-food me-2"></i>
+                                                Dinde a l'italienne
+                                            </div>
+                                            <div class="col-2 d-flex justify-content-end" >
+                                                <i class="fas fa-solid fa-pen me-1"></i>
+                                                <i class="fas fa-solid fa-trash"></i>
+                                            </div>                                        
+                                        </div>
+                                    </li>                                  
+                                    <li class="list-group-item bg-warning">
+                                        <div class="row">
+                                            <div class="col-10" >
+                                                <i class="fas fa-solid fa-ice-cream me-2"></i>
+                                                Fromage
+                                            </div>
+                                            <div class="col-2 d-flex justify-content-end" >
+                                                <i class="fas fa-solid fa-pen me-1"></i>
+                                                <i class="fas fa-solid fa-trash"></i>
+                                            </div>                                        
+                                        </div>
+                                    </li>                                  
+                                </ul>
+                            </p>
+                            <a href="#" class="card-link">Voir plus</a>
+                        </div>
+                    </div>
+                </div>         
             </div>
-            <div class="row" >
-                <div class="col-md-3 d-flex justify-content-center" style="border:1px solid red">repas x</div>
-                <div class="col-md-3 d-flex justify-content-center" style="border:1px solid red">repas x</div>
-                <div class="col-md-3 d-flex justify-content-center" style="border:1px solid red">repas x</div>
-                <div class="col-md-3 d-flex justify-content-center" style="border:1px solid red">repas x</div>                 
-            </div>            
-            <div class="row" >
-                <div class="col-md-3 d-flex justify-content-center" style="border:1px solid red">repas x</div>
-                <div class="col-md-3 d-flex justify-content-center" style="border:1px solid red">repas x</div>
-                <div class="col-md-3 d-flex justify-content-center" style="border:1px solid red">repas x</div>
-                <div class="col-md-3 d-flex justify-content-center" style="border:1px solid red">repas x</div>                 
+
+            <!-- Ligne 3 -->
+            <div class="row mt-4" >
+                <!-- 1 repas primary  --> 
+                <div class="col-md-3 d-flex justify-content-center" style="border:none">
+                    <!-- SIMPLE CARD -->
+                    <div class="card  bg-warning" style="width: 20rem;">
+                        <div class="card-body">
+                            <h4 class="card-title">Samedi 04 mars</h4>
+                            <h6 class="card-subtitle">
+                                <div class="row">
+                                    <div class="col d-flex justify-content-center" >
+                                        Déjeuner
+                                    </div>
+                                    <div class="col d-flex justify-content-end" >
+                                        <i class="fas fa-solid fa-user me-2"></i>
+                                        <p> - 2 +</p>
+                                    </div>
+                                </div>
+                            </h6>
+                            <p class="card-text">
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item bg-warning">
+                                        <div class="row">
+                                            <div class="col-10" >
+                                                <i class="fas fa-solid fa-egg me-2"></i>
+                                                Oeufs mayo
+                                            </div>
+                                            <div class="col-2 d-flex justify-content-end" >
+                                                <i class="fas fa-solid fa-pen me-1"></i>
+                                                <i class="fas fa-solid fa-trash"></i>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="list-group-item bg-warning">
+                                        <div class="row">
+                                            <div class="col-10" >
+                                                <i class="fas fa-solid fa-bowl-food me-2"></i>
+                                                Dinde a l'italienne
+                                            </div>
+                                            <div class="col-2 d-flex justify-content-end" >
+                                                <i class="fas fa-solid fa-pen me-1"></i>
+                                                <i class="fas fa-solid fa-trash"></i>
+                                            </div>                                        
+                                        </div>
+                                    </li>                                  
+                                    <li class="list-group-item bg-warning">
+                                        <div class="row">
+                                            <div class="col-10" >
+                                                <i class="fas fa-solid fa-ice-cream me-2"></i>
+                                                Fromage
+                                            </div>
+                                            <div class="col-2 d-flex justify-content-end" >
+                                                <i class="fas fa-solid fa-pen me-1"></i>
+                                                <i class="fas fa-solid fa-trash"></i>
+                                            </div>                                        
+                                        </div>
+                                    </li>                                  
+                                </ul>
+                            </p>
+                            <a href="#" class="card-link">Voir plus</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- 1 repas secondary --> 
+                <div class="col-md-3 d-flex justify-content-center" style="border:none">
+                    <!-- SIMPLE CARD -->
+                    <div class="card  bg-secondary" style="width: 20rem;">
+                        <div class="card-body">
+                            <h4 class="card-title">Samedi 04 mars</h4>
+                            <h6 class="card-subtitle">
+                                <div class="row">
+                                    <div class="col d-flex justify-content-center" >
+                                        Diner
+                                    </div>
+                                    <div class="col d-flex justify-content-end" >
+                                        <i class="fas fa-solid fa-user me-2"></i>
+                                        <p> - 2 +</p>
+                                    </div>
+                                </div>
+                            </h6>
+                            <p class="card-text">
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item bg-secondary">
+                                        <div class="row">
+                                            <div class="col-10" >
+                                                <i class="fas fa-solid fa-egg me-2"></i>
+                                                Oeufs mayo
+                                            </div>
+                                            <div class="col-2 d-flex justify-content-end" >
+                                                <i class="fas fa-solid fa-pen me-1"></i>
+                                                <i class="fas fa-solid fa-trash"></i>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="list-group-item bg-secondary">
+                                        <div class="row">
+                                            <div class="col-10" >
+                                                <i class="fas fa-solid fa-bowl-food me-2"></i>
+                                                Dinde a l'italienne
+                                            </div>
+                                            <div class="col-2 d-flex justify-content-end" >
+                                                <i class="fas fa-solid fa-pen me-1"></i>
+                                                <i class="fas fa-solid fa-trash"></i>
+                                            </div>                                        
+                                        </div>
+                                    </li>                                  
+                                    <li class="list-group-item bg-secondary">
+                                        <div class="row">
+                                            <div class="col-10" >
+                                                <i class="fas fa-solid fa-ice-cream me-2"></i>
+                                                Fromage
+                                            </div>
+                                            <div class="col-2 d-flex justify-content-end" >
+                                                <i class="fas fa-solid fa-pen me-1"></i>
+                                                <i class="fas fa-solid fa-trash"></i>
+                                            </div>                                        
+                                        </div>
+                                    </li>                                  
+                                </ul>
+                            </p>
+                            <a href="#" class="card-link">Voir plus</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- 1 repas primary --> 
+                <div class="col-md-3 d-flex justify-content-center" style="border:none">
+                    <!-- SIMPLE CARD -->
+                    <div class="card  bg-warning" style="width: 20rem;">
+                        <div class="card-body">
+                            <h4 class="card-title">Dimanche 05 mars</h4>
+                            <h6 class="card-subtitle">
+                                <div class="row">
+                                    <div class="col d-flex justify-content-center" >
+                                        Déjeuner
+                                    </div>
+                                    <div class="col d-flex justify-content-end" >
+                                        <i class="fas fa-solid fa-user me-2"></i>
+                                        <p> - 2 +</p>
+                                    </div>
+                                </div>
+                            </h6>
+                            <p class="card-text">
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item bg-warning">
+                                        <div class="row">
+                                            <div class="col-10" >
+                                                <i class="fas fa-solid fa-egg me-2"></i>
+                                                Oeufs mayo
+                                            </div>
+                                            <div class="col-2 d-flex justify-content-end" >
+                                                <i class="fas fa-solid fa-pen me-1"></i>
+                                                <i class="fas fa-solid fa-trash"></i>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="list-group-item bg-warning">
+                                        <div class="row">
+                                            <div class="col-10" >
+                                                <i class="fas fa-solid fa-bowl-food me-2"></i>
+                                                Dinde a l'italienne
+                                            </div>
+                                            <div class="col-2 d-flex justify-content-end" >
+                                                <i class="fas fa-solid fa-pen me-1"></i>
+                                                <i class="fas fa-solid fa-trash"></i>
+                                            </div>                                        
+                                        </div>
+                                    </li>                                  
+                                    <li class="list-group-item bg-warning">
+                                        <div class="row">
+                                            <div class="col-10" >
+                                                <i class="fas fa-solid fa-ice-cream me-2"></i>
+                                                Fromage
+                                            </div>
+                                            <div class="col-2 d-flex justify-content-end" >
+                                                <i class="fas fa-solid fa-pen me-1"></i>
+                                                <i class="fas fa-solid fa-trash"></i>
+                                            </div>                                        
+                                        </div>
+                                    </li>                                  
+                                </ul>
+                            </p>
+                            <a href="#" class="card-link">Voir plus</a>
+                        </div>
+                    </div>
+                </div>                
+                <!-- 1 repas secondary--> 
+                <div class="col-md-3 d-flex justify-content-center" style="border:none">
+                    <!-- SIMPLE CARD -->
+                    <div class="card  bg-secondary" style="width: 20rem;">
+                        <div class="card-body">
+                            <h4 class="card-title">Dimanche 05 mars</h4>
+                            <h6 class="card-subtitle">
+                                <div class="row">
+                                    <div class="col d-flex justify-content-center" >
+                                        Diner
+                                    </div>
+                                    <div class="col d-flex justify-content-end" >
+                                        <i class="fas fa-solid fa-user me-2"></i>
+                                        <p> - 2 +</p>
+                                    </div>
+                                </div>
+                            </h6>
+                            <p class="card-text">
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item bg-secondary">
+                                        <div class="row">
+                                            <div class="col-10" >
+                                                <i class="fas fa-solid fa-egg me-2"></i>
+                                                Oeufs mayo
+                                            </div>
+                                            <div class="col-2 d-flex justify-content-end" >
+                                                <i class="fas fa-solid fa-pen me-1"></i>
+                                                <i class="fas fa-solid fa-trash"></i>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="list-group-item bg-secondary">
+                                        <div class="row">
+                                            <div class="col-10" >
+                                                <i class="fas fa-solid fa-bowl-food me-2"></i>
+                                                Dinde a l'italienne
+                                            </div>
+                                            <div class="col-2 d-flex justify-content-end" >
+                                                <i class="fas fa-solid fa-pen me-1"></i>
+                                                <i class="fas fa-solid fa-trash"></i>
+                                            </div>                                        
+                                        </div>
+                                    </li>                                  
+                                    <li class="list-group-item bg-secondary">
+                                        <div class="row">
+                                            <div class="col-10" >
+                                                <i class="fas fa-solid fa-ice-cream me-2"></i>
+                                                Fromage
+                                            </div>
+                                            <div class="col-2 d-flex justify-content-end" >
+                                                <i class="fas fa-solid fa-pen me-1"></i>
+                                                <i class="fas fa-solid fa-trash"></i>
+                                            </div>                                        
+                                        </div>
+                                    </li>                                  
+                                </ul>
+                            </p>
+                            <a href="#" class="card-link">Voir plus</a>
+                        </div>
+                    </div>
+                </div>            
             </div>
+            
+            <!-- Ligne 4 -->
+            <div class="row mt-4" >
+                <!-- 1 repas secondary --> 
+                <div class="col-md-3 d-flex justify-content-center" style="border:none">
+                    <!-- SIMPLE CARD -->
+                    <div class="card  bg-secondary" style="width: 20rem;">
+                        <div class="card-body">
+                            <h4 class="card-title">Samedi 04 mars</h4>
+                            <h6 class="card-subtitle">
+                                <div class="row">
+                                    <div class="col d-flex justify-content-center" >
+                                        Diner
+                                    </div>
+                                    <div class="col d-flex justify-content-end" >
+                                        <i class="fas fa-solid fa-user me-2"></i>
+                                        <p> - 2 +</p>
+                                    </div>
+                                </div>
+                            </h6>
+                            <p class="card-text">
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item bg-secondary">
+                                        <div class="row">
+                                            <div class="col-10" >
+                                                <i class="fas fa-solid fa-egg me-2"></i>
+                                                Oeufs mayo
+                                            </div>
+                                            <div class="col-2 d-flex justify-content-end" >
+                                                <i class="fas fa-solid fa-pen me-1"></i>
+                                                <i class="fas fa-solid fa-trash"></i>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="list-group-item bg-secondary">
+                                        <div class="row">
+                                            <div class="col-10" >
+                                                <i class="fas fa-solid fa-bowl-food me-2"></i>
+                                                Dinde a l'italienne
+                                            </div>
+                                            <div class="col-2 d-flex justify-content-end" >
+                                                <i class="fas fa-solid fa-pen me-1"></i>
+                                                <i class="fas fa-solid fa-trash"></i>
+                                            </div>                                        
+                                        </div>
+                                    </li>                                  
+                                    <li class="list-group-item bg-secondary">
+                                        <div class="row">
+                                            <div class="col-10" >
+                                                <i class="fas fa-solid fa-ice-cream me-2"></i>
+                                                Fromage
+                                            </div>
+                                            <div class="col-2 d-flex justify-content-end" >
+                                                <i class="fas fa-solid fa-pen me-1"></i>
+                                                <i class="fas fa-solid fa-trash"></i>
+                                            </div>                                        
+                                        </div>
+                                    </li>                                  
+                                </ul>
+                            </p>
+                            <a href="#" class="card-link">Voir plus</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- 1 repas primary --> 
+                <div class="col-md-3 d-flex justify-content-center" style="border:none">
+                    <!-- SIMPLE CARD -->
+                    <div class="card  bg-warning" style="width: 20rem;">
+                        <div class="card-body">
+                            <h4 class="card-title">Samedi 04 mars</h4>
+                            <h6 class="card-subtitle">
+                                <div class="row">
+                                    <div class="col d-flex justify-content-center" >
+                                        Déjeuner
+                                    </div>
+                                    <div class="col d-flex justify-content-end" >
+                                        <i class="fas fa-solid fa-user me-2"></i>
+                                        <p> - 2 +</p>
+                                    </div>
+                                </div>
+                            </h6>
+                            <p class="card-text">
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item bg-warning">
+                                        <div class="row">
+                                            <div class="col-10" >
+                                                <i class="fas fa-solid fa-egg me-2"></i>
+                                                Oeufs mayo
+                                            </div>
+                                            <div class="col-2 d-flex justify-content-end" >
+                                                <i class="fas fa-solid fa-pen me-1"></i>
+                                                <i class="fas fa-solid fa-trash"></i>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="list-group-item bg-warning">
+                                        <div class="row">
+                                            <div class="col-10" >
+                                                <i class="fas fa-solid fa-bowl-food me-2"></i>
+                                                Dinde a l'italienne
+                                            </div>
+                                            <div class="col-2 d-flex justify-content-end" >
+                                                <i class="fas fa-solid fa-pen me-1"></i>
+                                                <i class="fas fa-solid fa-trash"></i>
+                                            </div>                                        
+                                        </div>
+                                    </li>                                  
+                                    <li class="list-group-item bg-warning">
+                                        <div class="row">
+                                            <div class="col-10" >
+                                                <i class="fas fa-solid fa-ice-cream me-2"></i>
+                                                Fromage
+                                            </div>
+                                            <div class="col-2 d-flex justify-content-end" >
+                                                <i class="fas fa-solid fa-pen me-1"></i>
+                                                <i class="fas fa-solid fa-trash"></i>
+                                            </div>                                        
+                                        </div>
+                                    </li>                                  
+                                </ul>
+                            </p>
+                            <a href="#" class="card-link">Voir plus</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- 1 repas secondary --> 
+                <div class="col-md-3 d-flex justify-content-center" style="border:none">
+                    <!-- SIMPLE CARD -->
+                    <div class="card  bg-secondary" style="width: 20rem;">
+                        <div class="card-body">
+                            <h4 class="card-title">Dimanche 05 mars</h4>
+                            <h6 class="card-subtitle">
+                                <div class="row">
+                                    <div class="col d-flex justify-content-center" >
+                                        Diner
+                                    </div>
+                                    <div class="col d-flex justify-content-end" >
+                                        <i class="fas fa-solid fa-user me-2"></i>
+                                        <p> - 2 +</p>
+                                    </div>
+                                </div>
+                            </h6>
+                            <p class="card-text">
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item bg-secondary">
+                                        <div class="row">
+                                            <div class="col-10" >
+                                                <i class="fas fa-solid fa-egg me-2"></i>
+                                                Oeufs mayo
+                                            </div>
+                                            <div class="col-2 d-flex justify-content-end" >
+                                                <i class="fas fa-solid fa-pen me-1"></i>
+                                                <i class="fas fa-solid fa-trash"></i>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="list-group-item bg-secondary">
+                                        <div class="row">
+                                            <div class="col-10" >
+                                                <i class="fas fa-solid fa-bowl-food me-2"></i>
+                                                Dinde a l'italienne
+                                            </div>
+                                            <div class="col-2 d-flex justify-content-end" >
+                                                <i class="fas fa-solid fa-pen me-1"></i>
+                                                <i class="fas fa-solid fa-trash"></i>
+                                            </div>                                        
+                                        </div>
+                                    </li>                                  
+                                    <li class="list-group-item bg-secondary">
+                                        <div class="row">
+                                            <div class="col-10" >
+                                                <i class="fas fa-solid fa-ice-cream me-2"></i>
+                                                Fromage
+                                            </div>
+                                            <div class="col-2 d-flex justify-content-end" >
+                                                <i class="fas fa-solid fa-pen me-1"></i>
+                                                <i class="fas fa-solid fa-trash"></i>
+                                            </div>                                        
+                                        </div>
+                                    </li>                                  
+                                </ul>
+                            </p>
+                            <a href="#" class="card-link">Voir plus</a>
+                        </div>
+                    </div>
+                </div>  
+                <!-- 1 repas primary --> 
+                <div class="col-md-3 d-flex justify-content-center" style="border:none">
+                    <!-- SIMPLE CARD -->
+                    <div class="card  bg-warning" style="width: 20rem;">
+                        <div class="card-body">
+                            <h4 class="card-title">Dimanche 05 mars</h4>
+                            <h6 class="card-subtitle">
+                                <div class="row">
+                                    <div class="col d-flex justify-content-center" >
+                                        Déjeuner
+                                    </div>
+                                    <div class="col d-flex justify-content-end" >
+                                        <i class="fas fa-solid fa-user me-2"></i>
+                                        <p> - 2 +</p>
+                                    </div>
+                                </div>
+                            </h6>
+                            <p class="card-text">
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item bg-warning">
+                                        <div class="row">
+                                            <div class="col-10" >
+                                                <i class="fas fa-solid fa-egg me-2"></i>
+                                                Oeufs mayo
+                                            </div>
+                                            <div class="col-2 d-flex justify-content-end" >
+                                                <i class="fas fa-solid fa-pen me-1"></i>
+                                                <i class="fas fa-solid fa-trash"></i>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="list-group-item bg-warning">
+                                        <div class="row">
+                                            <div class="col-10" >
+                                                <i class="fas fa-solid fa-bowl-food me-2"></i>
+                                                Dinde a l'italienne
+                                            </div>
+                                            <div class="col-2 d-flex justify-content-end" >
+                                                <i class="fas fa-solid fa-pen me-1"></i>
+                                                <i class="fas fa-solid fa-trash"></i>
+                                            </div>                                        
+                                        </div>
+                                    </li>                                  
+                                    <li class="list-group-item bg-warning">
+                                        <div class="row">
+                                            <div class="col-10" >
+                                                <i class="fas fa-solid fa-ice-cream me-2"></i>
+                                                Fromage
+                                            </div>
+                                            <div class="col-2 d-flex justify-content-end" >
+                                                <i class="fas fa-solid fa-pen me-1"></i>
+                                                <i class="fas fa-solid fa-trash"></i>
+                                            </div>                                        
+                                        </div>
+                                    </li>                                  
+                                </ul>
+                            </p>
+                            <a href="#" class="card-link">Voir plus</a>
+                        </div>
+                    </div>
+                </div>         
+            </div>
+
         </div>
     </div>
 

@@ -96,9 +96,13 @@
                                 <div class="input-group">
                                     <span class="input-group-text">Du </span>
                                     <!-- <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)"> -->
-                                    <input type="text" class="form-control datepicker" id="startDate"  value="13/06/2023">
+                                    <input type="text" class="form-control datepicker" id="startDate" value="13/06/2023" required>
                                     <span class="input-group-text">au </span>
-                                    <input type="text" class="form-control datepicker" id="endDate" value="13/06/2023">
+                                    <!-- <input type="text" class="form-control datepicker is-invalid" id="endDate"  required> -->
+                                    <input type="text" class="form-control datepicker" id="endDate" value="16/06/2023" required>
+                                    <small class="invalid-feedback">
+                                        Je dois savoir sur quelle période te proposer des menus : de 1 à 10 jours !
+                                    </small>
                                     <!-- Mes menus du  <input type="text" id="datepicker"> au  <input type="text" id="datepicker">
                                     <p>Date: <input type="text" id="datepicker"></p> -->
                                 </div>  
@@ -110,33 +114,43 @@
                                         <span class="input-group-text">
                                             <i class="fas fa-solid fa-user"></i>
                                         </span>   
-                                        <input type="text" maxlength="3" class="form-control" id="people" name="people" min="1" max="10" value="2">
+                                        <input type="text" maxlength="3" class="form-control" id="people" name="people" min="1" max="10" value="2" required>
+                                        <!-- <input type="range" class="custom-range" min="1" max="10" step="1" value="2" required> -->
                                         <span class="input-group-text">personnes</span>
-                                    </div>   
+                                        <small class="invalid-feedback">
+                                            Je dois savoir combien vous serez : de 1 à 10 !
+                                        </small>
+                                    </div>  
                                 </div>
                             </div>  
                         </div>
 
-                        <div class="col-4 col-lg-2" style="border:none">
-                            <input type="checkbox"  id="launch" name="launch" value="launch" checked>
-                            <label for="launch">Déjeuner</label><br>
-                            <input type="checkbox"  id="diner" name="diner" value="diner">
-                            <label for="diner">Diner</label><br>
+                        <div class="col-4 col-lg-2 form-check" style="border:none">
+                            <input type="checkbox" class="form-check-input" id="launch" name="launch" value="launch"  checked>
+                            <label class="form-check-label" for="launch">Déjeuner</label><br>
+                            <input type="checkbox" class="form-check-input"  id="diner" name="diner" value="diner">
+                            <label class="form-check-label" for="diner">Diner</label><br>
+                            <small class="invalid-feedback">
+                                Je dois savoir si tu souhaites déjeuner ou diner !
+                            </small>
                         </div>
 
-                        <div class="col-4 col-lg-2" style="border:none">
-                            <input type="checkbox"  id="starter" name="starter" value="starter">
-                            <label for="starter">Entrée</label><br>
-                            <input type="checkbox"  id="mainDish" name="mainDish" value="mainDish" checked>
-                            <label for="mainDish">Plats</label><br>
-                            <input type="checkbox"  id="dessert" name="dessert" value="dessert" checked>
-                            <label for="dessert">Desserts</label><br>
+                        <div class="col-4 col-lg-2 form-group" style="border:none">
+                            <input type="checkbox" class="form-check-input"  id="starter" name="starter" value="starter">
+                            <label class="form-check-label" for="starter">Entrée</label><br>
+                            <input type="checkbox" class="form-check-input"  id="mainDish" name="mainDish" value="mainDish" checked>
+                            <label class="form-check-label" for="mainDish">Plats</label><br>
+                            <input type="checkbox" class="form-check-input"  id="dessert" name="dessert" value="dessert" checked>
+                            <label class="form-check-label" for="dessert">Desserts</label><br>
+                            <small class="invalid-feedback">
+                                Je dois savoir de quoi sera composer ton repas !
+                            </small>
                         </div>
 
                         <div class="col-4 col-lg-2 d-flex flex-column align-items-center" style="border:none">
                             <div>
-                                <input type="checkbox"  id="cleverSuggest" name="cleverSuggest" value="cleverSuggest">
-                                <label for="cleverSuggest">Suggestions autos</label><br>
+                                <input class="form-check-input" type="checkbox"  id="cleverSuggest" name="cleverSuggest" value="cleverSuggest">
+                                <label class="form-check-label" for="cleverSuggest">Suggestions autos</label><br>
                             </div>
                             <div>  
                                 <button class="btn btn-outline-light"  id="submitSearch" type="submit">Générer menu</button>

@@ -4,8 +4,8 @@ const form = document.querySelector('.form');
 const startDateForm = document.getElementById('startDate');
 const endDateForm = document.getElementById('endDate');
 const peopleNbForm = document.getElementById('people');
-const isLaunch = document.getElementById('launch');
-const isDinner = document.getElementById('diner');
+const isLaunchForm = document.getElementById('launch');
+    const isDinnerForm = document.getElementById('diner');
 const dayInMilliseconds = 24*3600*1000;
 const MaxDays = 14;
 const MaxPerson = 100;
@@ -37,8 +37,8 @@ class Menu {
         this.state.startDate = '';
         this.state.endDate = ''; 
         this.people = 0; 
-        // this.isLaunch = isLaunch; 
-        // this.isDinner = isDinner; 
+        this.isLaunch = false; 
+        this.isDinner = false; 
         // this._validateMenuForm();
     }
 
@@ -56,12 +56,12 @@ class Menu {
         let id=0;
         let tableDate = this.state.startDate;
         while (tableDate <= this.state.endDate) {
-            if (this.isLaunch?.checked)
-                this.state.MenuTable.push({date : tableDate.toDateString(), repas: this.isLaunch.value, id : id});
+            if (isLaunchForm?.checked)
+                this.state.MenuTable.push({date : tableDate.toDateString(), repas: this.isLaunchForm.value, id : id});
                 id+=1;
-            if (this.isDinner?.checked)
+            if (isDinnerForm?.checked)
                 console.log('here1');
-                this.state.MenuTable.push({date : tableDate.toDateString(), repas: this.isDinner.value, id : id});
+                this.state.MenuTable.push({date : tableDate.toDateString(), repas: this.isDinnerForm.value, id : id});
                 id+=1;
                 tableDate.setDate(tableDate.getDate() + 1);
         }
@@ -97,6 +97,20 @@ class Menu {
         }
     } 
 
+    _displayMealType(status,errMsg="") {
+        if (!status) {
+            isLaunchForm.classList.remove("is-valid");
+            isLaunchForm.classList.add("is-invalid");
+            isDinnerForm.classList.remove("is-valid");
+            isDinnerForm.classList.add("is-invalid");
+            isDinnerForm.nextElementSibling.textContent = errMsg;
+        }
+        else {
+            isDinnerForm.classList.add("is-valid");
+            isDinnerForm.classList.remove("is-invalid");
+        }
+    } 
+
     _controlMenu(event) {
         event.preventDefault()
         
@@ -129,8 +143,21 @@ class Menu {
             this._displayPersonStatus(false,"Je dois savoir combien vous serez : de 1 à "+MaxPerson+" !")
             return false;
         }
-        //Date is validated
+        //Number of person is validated
         this._displayPersonStatus(true)
+ 
+        // Validation of the type of meal : dejeuner or diner
+        isLaunchForm.checked ? this.isLaunch = true : this.isLaunch = false;
+        isDinnerForm.checked ? this.isDinner = true : this.isDinner = false;
+
+        if (!this.isLaunch && !this.isDinner) {
+            console.log("Je dois savoir si tu veux déjeuner et/ou diner");
+            this._displayMealType(false,"Je dois savoir si tu veux déjeuner et/ou diner")
+            return false
+        }
+ 
+        //Number of person is validated
+        this._displayMealType(true)
 
         //Form is valid => call new Menu
         this._newMenu();
